@@ -1,10 +1,12 @@
 using BasicCalculator.operators;
+using System.Runtime.Intrinsics.X86;
 
 namespace BasicCalculator
 {
     public partial class FormCalculator : Form
     {
 
+        public bool finish { get; set; }
         public string charOperator { get; set; }
         public double[] numbers { get; set; }
 
@@ -12,18 +14,28 @@ namespace BasicCalculator
 
         public FormCalculator()
         {
-            StartPosition = FormStartPosition.CenterScreen;
+            // Start Component
             InitializeComponent();
 
+            // Form Color
+            BackColor = Color.DarkGray;
+            TransparencyKey = Color.DarkGray;
+
+            // Starting Variables
+            finish = false;
+            charOperator = "";
             numbers = new double[99];
 
             // Results
             buttonCharResult.Click += ButtonCharResult_Click;
+
             // Operators
+
             buttonCharAdd.Click += ButtonCharAdd_Click;
             buttonCharSubtract.Click += ButtonCharSubtract_Click;
             buttonCharMultiply.Click += ButtonCharMultiply_Click;
             buttonCharDivide.Click += ButtonCharDivide_Click;
+
             // Numbers
             buttonDigitZero.Click += ButtonDigitZero_Click;
             buttonDigitOne.Click += ButtonDigitOne_Click;
@@ -35,6 +47,15 @@ namespace BasicCalculator
             buttonDigitSeven.Click += ButtonDigitSeven_Click;
             buttonDigitEight.Click += ButtonDigitEight_Click;
             buttonDigitNine.Click += ButtonDigitNine_Click;
+
+            // Calculator Default Buttons
+            buttonDelete.Click += ButtonDelete_Click;
+            buttonReset.Click += ButtonReset_Click;
+
+            // Buttons Modifications
+            buttonCharResult.FlatStyle = FlatStyle.Popup;
+            buttonCharResult.ForeColor = Color.Transparent;
+            buttonCharResult.BackColor = Color.FromArgb(150, Color.Purple);
         }
 
         /** Button Click Number */
@@ -69,40 +90,82 @@ namespace BasicCalculator
 
         private void ButtonCharDivide_Click(object? sender, EventArgs e) => HandleOperatorButton(sender);
 
+        /** Button Click Operator */
+
+        private void ButtonDelete_Click(object? sender, EventArgs e)
+        {
+            Button? button = sender as Button;
+
+            if (button != null)
+            {
+                if (!string.IsNullOrEmpty(textBoxScreen.Text))
+                {
+                textBoxScreen.Text = textBoxScreen.Text.Substring(0, textBoxScreen.Text.Length - 1);
+                numbers[LastNumberIndex(numbers)] = double.NaN;
+                }
+            }
+            else
+            {
+                Finish(true);
+            }
+        }
+
+        private void ButtonReset_Click(object? sender, EventArgs e)
+        {
+            Button? button = sender as Button;
+
+            if (button != null)
+            {
+                if (!string.IsNullOrEmpty(textBoxScreen.Text))
+                    Finish(false);
+            }
+            else
+            {
+                Finish(true);
+            }
+        }
+
         /** Button Click Result */
 
         private void ButtonCharResult_Click(object? sender, EventArgs e)
         {
             Button? button = sender as Button;
 
-            if (button != null && !string.IsNullOrEmpty(textBoxScreen.Text))
+            if (button != null)
             {
-                double total = -1;
-
-                switch (charOperator)
+                if (!string.IsNullOrEmpty(textBoxScreen.Text))
                 {
-                    case "+":
-                        total = mathOperator.Add(numbers);
-                        break;
+                    double total = -1;
 
-                    case "-":
-                        total = mathOperator.Subtract(numbers);
-                        break;
+                    switch (charOperator)
+                    {
+                        case "+":
+                            total = mathOperator.Add(numbers);
+                            break;
 
-                    case "×":
-                        total = mathOperator.Multiply(numbers);
-                        break;
+                        case "-":
+                            total = mathOperator.Subtract(numbers);
+                            break;
 
-                    case "÷":
-                        total = mathOperator.Divide(numbers);
-                        break;
+                        case "×":
+                            total = mathOperator.Multiply(numbers);
+                            break;
+
+                        case "÷":
+                            total = mathOperator.Divide(numbers);
+                            break;
+                    }
+
+                    textBoxScreen.Text = total.ToString();
                 }
-
-                textBoxScreen.Text = total.ToString();
+            }
+            else
+            {
+                Finish(true);
             }
         }
 
-        /** Helpers */
+        /** Code Helpers */
 
         private void HandleDigitButton(object? sender)
         {
@@ -110,8 +173,18 @@ namespace BasicCalculator
 
             if (button != null)
             {
-                numbers[LastNumber(numbers)] = Convert.ToDouble(button.Text);
+                if (finish)
+                {
+                    textBoxScreen.Clear();
+                    finish = false;
+                }
+
+                numbers[LastNumberIndex(numbers)] = Convert.ToDouble(button.Text);
                 textBoxScreen.AppendText(button.Text);
+            }
+            else
+            {
+                Finish(true);
             }
         }
 
@@ -119,14 +192,40 @@ namespace BasicCalculator
         {
             Button? button = sender as Button;
 
-            if (button != null && !string.IsNullOrEmpty(textBoxScreen.Text) && IsNotNullOrEmpty(charOperator))
+            if (button != null)
             {
-                textBoxScreen.AppendText(button.Text);
-                charOperator = button.Text;
+                if (finish)
+                {
+                    textBoxScreen.Clear();
+                    finish = false;
+                }
+
+                if (!string.IsNullOrEmpty(textBoxScreen.Text) && charOperator.Length == 0)
+                {
+                    textBoxScreen.AppendText(button.Text);
+                    charOperator = button.Text;
+                }
+            }
+            else
+            {
+                textBoxScreen.Text = "ERROR!";
+                finish = true;
             }
         }
 
-        private int LastNumber(double[] array)
+        private void Finish(bool error)
+        {
+            if (error)
+                textBoxScreen.Text = "ERROR!";
+            else
+                textBoxScreen.Clear();
+
+            finish = true;
+            charOperator = "";
+            numbers = new double[99];
+        }
+
+        private int LastNumberIndex(double[] array)
         {
 
             for (int i = array.Length - 1; i >= 0; i--)
@@ -134,7 +233,5 @@ namespace BasicCalculator
 
             return -1;
         }
-
-        private bool IsNotNullOrEmpty(string text) => (text != null ? text.Equals(string.Empty) : true);
     }
 }

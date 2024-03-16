@@ -55,7 +55,7 @@
             buttonCharAdd.BackColor = SystemColors.Control;
             buttonCharAdd.FlatStyle = FlatStyle.System;
             buttonCharAdd.Font = new Font("Mongolian Baiti", 25F);
-            buttonCharAdd.Location = new Point(738, 376);
+            buttonCharAdd.Location = new Point(180, 234);
             buttonCharAdd.Margin = new Padding(4, 3, 4, 3);
             buttonCharAdd.Name = "buttonCharAdd";
             buttonCharAdd.Size = new Size(51, 56);
@@ -69,7 +69,7 @@
             buttonCharResult.FlatStyle = FlatStyle.System;
             buttonCharResult.Font = new Font("Mongolian Baiti", 25F);
             buttonCharResult.ForeColor = SystemColors.ControlText;
-            buttonCharResult.Location = new Point(738, 440);
+            buttonCharResult.Location = new Point(180, 298);
             buttonCharResult.Margin = new Padding(4, 3, 4, 3);
             buttonCharResult.Name = "buttonCharResult";
             buttonCharResult.Size = new Size(51, 56);
@@ -82,7 +82,7 @@
             buttonDigitThree.BackColor = SystemColors.Control;
             buttonDigitThree.FlatStyle = FlatStyle.System;
             buttonDigitThree.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitThree.Location = new Point(682, 376);
+            buttonDigitThree.Location = new Point(124, 234);
             buttonDigitThree.Margin = new Padding(4, 3, 4, 3);
             buttonDigitThree.Name = "buttonDigitThree";
             buttonDigitThree.Size = new Size(51, 56);
@@ -95,7 +95,7 @@
             buttonDigitSeven.BackColor = SystemColors.Control;
             buttonDigitSeven.FlatStyle = FlatStyle.System;
             buttonDigitSeven.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitSeven.Location = new Point(570, 250);
+            buttonDigitSeven.Location = new Point(12, 108);
             buttonDigitSeven.Margin = new Padding(4, 3, 4, 3);
             buttonDigitSeven.Name = "buttonDigitSeven";
             buttonDigitSeven.Size = new Size(51, 56);
@@ -108,7 +108,7 @@
             buttonDigitEight.BackColor = SystemColors.Control;
             buttonDigitEight.FlatStyle = FlatStyle.System;
             buttonDigitEight.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitEight.Location = new Point(626, 250);
+            buttonDigitEight.Location = new Point(68, 108);
             buttonDigitEight.Margin = new Padding(4, 3, 4, 3);
             buttonDigitEight.Name = "buttonDigitEight";
             buttonDigitEight.Size = new Size(51, 56);
@@ -121,12 +121,12 @@
             buttonDigitNine.BackColor = SystemColors.Control;
             buttonDigitNine.FlatStyle = FlatStyle.System;
             buttonDigitNine.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitNine.Location = new Point(682, 250);
+            buttonDigitNine.Location = new Point(124, 108);
             buttonDigitNine.Margin = new Padding(4, 3, 4, 3);
             buttonDigitNine.Name = "buttonDigitNine";
             buttonDigitNine.Size = new Size(51, 56);
             buttonDigitNine.TabIndex = 5;
-            buttonDigitNine.Text = "1";
+            buttonDigitNine.Text = "9";
             buttonDigitNine.UseVisualStyleBackColor = false;
             // 
             // buttonDigitFour
@@ -134,7 +134,7 @@
             buttonDigitFour.BackColor = SystemColors.Control;
             buttonDigitFour.FlatStyle = FlatStyle.System;
             buttonDigitFour.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitFour.Location = new Point(570, 313);
+            buttonDigitFour.Location = new Point(12, 171);
             buttonDigitFour.Margin = new Padding(4, 3, 4, 3);
             buttonDigitFour.Name = "buttonDigitFour";
             buttonDigitFour.Size = new Size(51, 56);
@@ -147,7 +147,7 @@
             buttonDigitFive.BackColor = SystemColors.Control;
             buttonDigitFive.FlatStyle = FlatStyle.System;
             buttonDigitFive.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitFive.Location = new Point(626, 313);
+            buttonDigitFive.Location = new Point(68, 171);
             buttonDigitFive.Margin = new Padding(4, 3, 4, 3);
             buttonDigitFive.Name = "buttonDigitFive";
             buttonDigitFive.Size = new Size(51, 56);
@@ -160,7 +160,7 @@
             buttonDigitSix.BackColor = SystemColors.Control;
             buttonDigitSix.FlatStyle = FlatStyle.System;
             buttonDigitSix.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitSix.Location = new Point(682, 313);
+            buttonDigitSix.Location = new Point(124, 171);
             buttonDigitSix.Margin = new Padding(4, 3, 4, 3);
             buttonDigitSix.Name = "buttonDigitSix";
             buttonDigitSix.Size = new Size(51, 56);
@@ -173,7 +173,7 @@
             buttonCharDivide.BackColor = SystemColors.Control;
             buttonCharDivide.FlatStyle = FlatStyle.System;
             buttonCharDivide.Font = new Font("Mongolian Baiti", 25F);
-            buttonCharDivide.Location = new Point(738, 185);
+            buttonCharDivide.Location = new Point(180, 46);
             buttonCharDivide.Margin = new Padding(4, 3, 4, 3);
             buttonCharDivide.Name = "buttonCharDivide";
             buttonCharDivide.Size = new Size(51, 56);
@@ -186,7 +186,7 @@
             buttonCharMultiply.BackColor = SystemColors.Control;
             buttonCharMultiply.FlatStyle = FlatStyle.System;
             buttonCharMultiply.Font = new Font("Mongolian Baiti", 25F);
-            buttonCharMultiply.Location = new Point(738, 250);
+            buttonCharMultiply.Location = new Point(180, 108);
             buttonCharMultiply.Margin = new Padding(4, 3, 4, 3);
             buttonCharMultiply.Name = "buttonCharMultiply";
             buttonCharMultiply.Size = new Size(51, 56);
@@ -199,7 +199,7 @@
             buttonCharSubtract.BackColor = SystemColors.Control;
             buttonCharSubtract.FlatStyle = FlatStyle.System;
             buttonCharSubtract.Font = new Font("Mongolian Baiti", 25F);
-            buttonCharSubtract.Location = new Point(738, 313);
+            buttonCharSubtract.Location = new Point(180, 171);
             buttonCharSubtract.Margin = new Padding(4, 3, 4, 3);
             buttonCharSubtract.Name = "buttonCharSubtract";
             buttonCharSubtract.Size = new Size(51, 56);
@@ -212,7 +212,7 @@
             buttonDigitZero.BackColor = SystemColors.Control;
             buttonDigitZero.FlatStyle = FlatStyle.System;
             buttonDigitZero.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitZero.Location = new Point(626, 440);
+            buttonDigitZero.Location = new Point(68, 298);
             buttonDigitZero.Margin = new Padding(4, 3, 4, 3);
             buttonDigitZero.Name = "buttonDigitZero";
             buttonDigitZero.Size = new Size(51, 56);
@@ -225,7 +225,7 @@
             buttonDigitOne.BackColor = SystemColors.Control;
             buttonDigitOne.FlatStyle = FlatStyle.System;
             buttonDigitOne.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitOne.Location = new Point(570, 376);
+            buttonDigitOne.Location = new Point(12, 234);
             buttonDigitOne.Margin = new Padding(4, 3, 4, 3);
             buttonDigitOne.Name = "buttonDigitOne";
             buttonDigitOne.Size = new Size(51, 56);
@@ -238,7 +238,7 @@
             buttonDigitTwo.BackColor = SystemColors.Control;
             buttonDigitTwo.FlatStyle = FlatStyle.System;
             buttonDigitTwo.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitTwo.Location = new Point(626, 376);
+            buttonDigitTwo.Location = new Point(68, 234);
             buttonDigitTwo.Margin = new Padding(4, 3, 4, 3);
             buttonDigitTwo.Name = "buttonDigitTwo";
             buttonDigitTwo.Size = new Size(51, 56);
@@ -251,7 +251,7 @@
             buttonCharPercentage.BackColor = SystemColors.Control;
             buttonCharPercentage.FlatStyle = FlatStyle.System;
             buttonCharPercentage.Font = new Font("Mongolian Baiti", 25F);
-            buttonCharPercentage.Location = new Point(682, 185);
+            buttonCharPercentage.Location = new Point(124, 46);
             buttonCharPercentage.Margin = new Padding(4, 3, 4, 3);
             buttonCharPercentage.Name = "buttonCharPercentage";
             buttonCharPercentage.Size = new Size(51, 56);
@@ -264,7 +264,7 @@
             buttonDelete.BackColor = SystemColors.Control;
             buttonDelete.FlatStyle = FlatStyle.System;
             buttonDelete.Font = new Font("Mongolian Baiti", 25F);
-            buttonDelete.Location = new Point(626, 185);
+            buttonDelete.Location = new Point(68, 46);
             buttonDelete.Margin = new Padding(4, 3, 4, 3);
             buttonDelete.Name = "buttonDelete";
             buttonDelete.Size = new Size(51, 56);
@@ -277,7 +277,7 @@
             buttonReset.BackColor = SystemColors.Control;
             buttonReset.FlatStyle = FlatStyle.System;
             buttonReset.Font = new Font("Mongolian Baiti", 20F);
-            buttonReset.Location = new Point(570, 185);
+            buttonReset.Location = new Point(12, 48);
             buttonReset.Margin = new Padding(4, 3, 4, 3);
             buttonReset.Name = "buttonReset";
             buttonReset.Size = new Size(51, 56);
@@ -287,18 +287,22 @@
             // 
             // textBoxScreen
             // 
-            textBoxScreen.Location = new Point(570, 154);
+            textBoxScreen.BorderStyle = BorderStyle.FixedSingle;
+            textBoxScreen.Cursor = Cursors.No;
+            textBoxScreen.Font = new Font("Segoe UI", 15F);
+            textBoxScreen.Location = new Point(12, 8);
             textBoxScreen.Name = "textBoxScreen";
             textBoxScreen.ReadOnly = true;
-            textBoxScreen.Size = new Size(219, 25);
+            textBoxScreen.Size = new Size(219, 34);
             textBoxScreen.TabIndex = 18;
+            textBoxScreen.TextAlign = HorizontalAlignment.Right;
             // 
             // FormCalculator
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(800, 510);
+            ClientSize = new Size(244, 361);
             Controls.Add(buttonDigitSeven);
             Controls.Add(textBoxScreen);
             Controls.Add(buttonReset);
@@ -319,9 +323,13 @@
             Controls.Add(buttonCharResult);
             Controls.Add(buttonCharAdd);
             Font = new Font("Segoe UI", 10F);
+            ForeColor = SystemColors.ControlText;
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
             Name = "FormCalculator";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Calculadora Básica";
             ResumeLayout(false);
             PerformLayout();
