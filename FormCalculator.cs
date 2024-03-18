@@ -69,33 +69,21 @@ namespace BasicCalculator
         /** Button Click Number */
 
         private void ButtonDigitNine_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-
         private void ButtonDigitEight_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-
         private void ButtonDigitSeven_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-
         private void ButtonDigitSix_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-
         private void ButtonDigitFive_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-
         private void ButtonDigitFour_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-
         private void ButtonDigitThree_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-
         private void ButtonDigitTwo_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-
         private void ButtonDigitOne_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-
         private void ButtonDigitZero_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
 
         /** Button Click Operator */
 
         private void ButtonCharAdd_Click(object? sender, EventArgs e) => HandleOperatorButton(sender);
-
         private void ButtonCharSubtract_Click(object? sender, EventArgs e) => HandleOperatorButton(sender);
-
         private void ButtonCharMultiply_Click(object? sender, EventArgs e) => HandleOperatorButton(sender);
-
         private void ButtonCharDivide_Click(object? sender, EventArgs e) => HandleOperatorButton(sender);
 
         /** Button Click Operator */
@@ -113,10 +101,11 @@ namespace BasicCalculator
                     textBoxScreen.Text = text.Substring(0, text.Length - 1);
                     numbers[index] = double.NaN;
 
+                    // Checks if the deleted char is not a number, which concludes that it is an operator, and sets the variable as empty.
                     if (Regex.IsMatch(text, @"^[0-9]+$"))
                         charOperator = "";
-
                 }
+
             }
             else
             {
@@ -201,7 +190,7 @@ namespace BasicCalculator
 
         /** Code Helpers */
 
-        private void HandleDigitButton(object? sender)
+            private void HandleDigitButton(object? sender)
         {
             Button? button = sender as Button;
 
