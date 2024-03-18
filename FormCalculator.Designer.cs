@@ -44,7 +44,7 @@
             buttonDigitZero = new Button();
             buttonDigitOne = new Button();
             buttonDigitTwo = new Button();
-            buttonCharPercentage = new Button();
+            buttonTransparency = new Button();
             buttonDelete = new Button();
             buttonReset = new Button();
             textBoxScreen = new TextBox();
@@ -246,18 +246,19 @@
             buttonDigitTwo.Text = "2";
             buttonDigitTwo.UseVisualStyleBackColor = false;
             // 
-            // buttonCharPercentage
+            // buttonTransparency
             // 
-            buttonCharPercentage.BackColor = SystemColors.Control;
-            buttonCharPercentage.FlatStyle = FlatStyle.System;
-            buttonCharPercentage.Font = new Font("Mongolian Baiti", 25F);
-            buttonCharPercentage.Location = new Point(124, 46);
-            buttonCharPercentage.Margin = new Padding(4, 3, 4, 3);
-            buttonCharPercentage.Name = "buttonCharPercentage";
-            buttonCharPercentage.Size = new Size(51, 56);
-            buttonCharPercentage.TabIndex = 15;
-            buttonCharPercentage.Text = "%";
-            buttonCharPercentage.UseVisualStyleBackColor = false;
+            buttonTransparency.AccessibleName = "Mudar transparência";
+            buttonTransparency.BackColor = SystemColors.Control;
+            buttonTransparency.FlatStyle = FlatStyle.System;
+            buttonTransparency.Font = new Font("Mongolian Baiti", 25F);
+            buttonTransparency.Location = new Point(124, 46);
+            buttonTransparency.Margin = new Padding(4, 3, 4, 3);
+            buttonTransparency.Name = "buttonTransparency";
+            buttonTransparency.Size = new Size(51, 56);
+            buttonTransparency.TabIndex = 15;
+            buttonTransparency.Text = "⌘";
+            buttonTransparency.UseVisualStyleBackColor = false;
             // 
             // buttonDelete
             // 
@@ -307,7 +308,7 @@
             Controls.Add(textBoxScreen);
             Controls.Add(buttonReset);
             Controls.Add(buttonDelete);
-            Controls.Add(buttonCharPercentage);
+            Controls.Add(buttonTransparency);
             Controls.Add(buttonDigitTwo);
             Controls.Add(buttonDigitOne);
             Controls.Add(buttonDigitZero);
@@ -352,7 +353,7 @@
         private Button buttonDigitZero;
         private Button buttonDigitOne;
         private Button buttonDigitTwo;
-        private Button buttonCharPercentage;
+        private Button buttonTransparency;
         private Button buttonDelete;
         private Button buttonReset;
         private TextBox textBoxScreen;

@@ -10,6 +10,14 @@ namespace BasicCalculator
         {
             ApplicationConfiguration.Initialize();
             Application.Run(new FormCalculator());
+
+            FormCalculator calc = new FormCalculator
+            ();
+
+            Console.WriteLine(calc.BackColor != null ? calc.BackColor.Name : "BackColor Nulo");
+
+            Console.WriteLine(calc.TransparencyKey != null ? calc.TransparencyKey.Name : "TransparencyKey Nulo");
+
         }
     }
 }

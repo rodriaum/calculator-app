@@ -1,14 +1,19 @@
 using BasicCalculator.operators;
 using System.Runtime.Intrinsics.X86;
+using System.Text.RegularExpressions;
 
 namespace BasicCalculator
 {
     public partial class FormCalculator : Form
     {
-
+        // Bools Checkers
         public bool finish { get; set; }
+        public bool transparency { get; set; }
+        // Character Operator
         public string charOperator { get; set; }
+        // Numbers
         public double[] numbers { get; set; }
+        public int index { get; set; }
 
         MathOperator mathOperator = new MathOperator();
 
@@ -17,14 +22,14 @@ namespace BasicCalculator
             // Start Component
             InitializeComponent();
 
-            // Form Color
-            BackColor = Color.DarkGray;
-            TransparencyKey = Color.DarkGray;
-
-            // Starting Variables
+            // Starting Variables: Bools Checkers
             finish = false;
+            transparency = false;
+            // Starting Variables: Character Operator
             charOperator = "";
+            // Starting Variables: Numbers
             numbers = new double[99];
+            index = 0;
 
             // Results
             buttonCharResult.Click += ButtonCharResult_Click;
@@ -52,7 +57,10 @@ namespace BasicCalculator
             buttonDelete.Click += ButtonDelete_Click;
             buttonReset.Click += ButtonReset_Click;
 
-            // Buttons Modifications
+            // Custom Buttons
+            buttonTransparency.Click += ButtonTransparency_Click;
+
+            // Set of base calculator button modifications (form).
             buttonCharResult.FlatStyle = FlatStyle.Popup;
             buttonCharResult.ForeColor = Color.Transparent;
             buttonCharResult.BackColor = Color.FromArgb(150, Color.Purple);
@@ -98,10 +106,16 @@ namespace BasicCalculator
 
             if (button != null)
             {
-                if (!string.IsNullOrEmpty(textBoxScreen.Text))
+                string text = textBoxScreen.Text;
+
+                if (!string.IsNullOrEmpty(text))
                 {
-                textBoxScreen.Text = textBoxScreen.Text.Substring(0, textBoxScreen.Text.Length - 1);
-                numbers[LastNumberIndex(numbers)] = double.NaN;
+                    textBoxScreen.Text = text.Substring(0, text.Length - 1);
+                    numbers[index] = double.NaN;
+
+                    if (Regex.IsMatch(text, @"^[0-9]+$"))
+                        charOperator = "";
+
                 }
             }
             else
@@ -125,6 +139,27 @@ namespace BasicCalculator
             }
         }
 
+        private void ButtonTransparency_Click(object? sender, EventArgs e)
+        {
+            Button? button = sender as Button;
+
+            if (button != null)
+            {
+                if (!transparency)
+                {
+                    BackColor = Color.DarkGray;
+                    TransparencyKey = Color.DarkGray;
+                }
+                else
+                {
+                    BackColor = Color.Empty;
+                    TransparencyKey = Color.Empty;
+                }
+
+                transparency = !transparency;
+            }
+        }
+
         /** Button Click Result */
 
         private void ButtonCharResult_Click(object? sender, EventArgs e)
@@ -135,28 +170,27 @@ namespace BasicCalculator
             {
                 if (!string.IsNullOrEmpty(textBoxScreen.Text))
                 {
-                    double total = -1;
-
                     switch (charOperator)
                     {
                         case "+":
-                            total = mathOperator.Add(numbers);
+                            textBoxScreen.Text = mathOperator.Add(numbers).ToString();
                             break;
 
                         case "-":
-                            total = mathOperator.Subtract(numbers);
+                            textBoxScreen.Text = mathOperator.Subtract(numbers).ToString();
                             break;
 
                         case "×":
-                            total = mathOperator.Multiply(numbers);
+                            textBoxScreen.Text = mathOperator.Multiply(numbers).ToString();
                             break;
 
                         case "÷":
-                            total = mathOperator.Divide(numbers);
+                            if (!numbers.Contains(0))
+                                textBoxScreen.Text = mathOperator.Divide(numbers).ToString();
+                            else
+                                Finish(true);
                             break;
                     }
-
-                    textBoxScreen.Text = total.ToString();
                 }
             }
             else
@@ -179,7 +213,8 @@ namespace BasicCalculator
                     finish = false;
                 }
 
-                numbers[LastNumberIndex(numbers)] = Convert.ToDouble(button.Text);
+                numbers[index] = Convert.ToDouble(button.Text);
+                index++;
                 textBoxScreen.AppendText(button.Text);
             }
             else
@@ -208,30 +243,20 @@ namespace BasicCalculator
             }
             else
             {
-                textBoxScreen.Text = "ERROR!";
-                finish = true;
+                Finish(true);
             }
         }
 
-        private void Finish(bool error)
+        private void Finish(bool isError)
         {
-            if (error)
-                textBoxScreen.Text = "ERROR!";
+            if (isError)
+                textBoxScreen.Text = "Error";
             else
                 textBoxScreen.Clear();
 
             finish = true;
             charOperator = "";
             numbers = new double[99];
-        }
-
-        private int LastNumberIndex(double[] array)
-        {
-
-            for (int i = array.Length - 1; i >= 0; i--)
-                return i;
-
-            return -1;
         }
     }
 }
