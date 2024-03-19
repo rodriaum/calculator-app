@@ -62,13 +62,14 @@
             buttonCharAdd.TabIndex = 0;
             buttonCharAdd.Text = "+";
             buttonCharAdd.UseVisualStyleBackColor = false;
+            buttonCharAdd.Click += ButtonCharAdd_Click;
             // 
             // buttonCharResult
             // 
-            buttonCharResult.BackColor = SystemColors.ControlText;
-            buttonCharResult.FlatStyle = FlatStyle.System;
+            buttonCharResult.BackColor = Color.FromArgb(150, Color.Purple);
+            buttonCharResult.FlatStyle = FlatStyle.Popup;
             buttonCharResult.Font = new Font("Mongolian Baiti", 25F);
-            buttonCharResult.ForeColor = SystemColors.ControlText;
+            buttonCharResult.ForeColor = Color.Transparent;
             buttonCharResult.Location = new Point(180, 298);
             buttonCharResult.Margin = new Padding(4, 3, 4, 3);
             buttonCharResult.Name = "buttonCharResult";
@@ -76,6 +77,7 @@
             buttonCharResult.TabIndex = 1;
             buttonCharResult.Text = "=";
             buttonCharResult.UseVisualStyleBackColor = false;
+            buttonCharResult.Click += ButtonCharResult_Click;
             // 
             // buttonDigitThree
             // 
@@ -89,6 +91,7 @@
             buttonDigitThree.TabIndex = 2;
             buttonDigitThree.Text = "3";
             buttonDigitThree.UseVisualStyleBackColor = false;
+            buttonDigitThree.Click += ButtonDigitThree_Click;
             // 
             // buttonDigitSeven
             // 
@@ -102,6 +105,7 @@
             buttonDigitSeven.TabIndex = 3;
             buttonDigitSeven.Text = "7";
             buttonDigitSeven.UseVisualStyleBackColor = false;
+            buttonDigitSeven.Click += ButtonDigitSeven_Click;
             // 
             // buttonDigitEight
             // 
@@ -115,6 +119,7 @@
             buttonDigitEight.TabIndex = 4;
             buttonDigitEight.Text = "8";
             buttonDigitEight.UseVisualStyleBackColor = false;
+            buttonDigitEight.Click += ButtonDigitEight_Click;
             // 
             // buttonDigitNine
             // 
@@ -128,6 +133,7 @@
             buttonDigitNine.TabIndex = 5;
             buttonDigitNine.Text = "9";
             buttonDigitNine.UseVisualStyleBackColor = false;
+            buttonDigitNine.Click += ButtonDigitNine_Click;
             // 
             // buttonDigitFour
             // 
@@ -141,6 +147,7 @@
             buttonDigitFour.TabIndex = 6;
             buttonDigitFour.Text = "4";
             buttonDigitFour.UseVisualStyleBackColor = false;
+            buttonDigitFour.Click += ButtonDigitFour_Click;
             // 
             // buttonDigitFive
             // 
@@ -154,6 +161,7 @@
             buttonDigitFive.TabIndex = 7;
             buttonDigitFive.Text = "5";
             buttonDigitFive.UseVisualStyleBackColor = false;
+            buttonDigitFive.Click += ButtonDigitFive_Click;
             // 
             // buttonDigitSix
             // 
@@ -167,6 +175,7 @@
             buttonDigitSix.TabIndex = 8;
             buttonDigitSix.Text = "6";
             buttonDigitSix.UseVisualStyleBackColor = false;
+            buttonDigitSix.Click += ButtonDigitSix_Click;
             // 
             // buttonCharDivide
             // 
@@ -180,6 +189,7 @@
             buttonCharDivide.TabIndex = 9;
             buttonCharDivide.Text = "÷";
             buttonCharDivide.UseVisualStyleBackColor = false;
+            buttonCharDivide.Click += ButtonCharDivide_Click;
             // 
             // buttonCharMultiply
             // 
@@ -193,6 +203,7 @@
             buttonCharMultiply.TabIndex = 10;
             buttonCharMultiply.Text = "×";
             buttonCharMultiply.UseVisualStyleBackColor = false;
+            buttonCharMultiply.Click += ButtonCharMultiply_Click;
             // 
             // buttonCharSubtract
             // 
@@ -206,6 +217,7 @@
             buttonCharSubtract.TabIndex = 11;
             buttonCharSubtract.Text = "−";
             buttonCharSubtract.UseVisualStyleBackColor = false;
+            buttonCharSubtract.Click += ButtonCharSubtract_Click;
             // 
             // buttonDigitZero
             // 
@@ -219,6 +231,7 @@
             buttonDigitZero.TabIndex = 12;
             buttonDigitZero.Text = "0";
             buttonDigitZero.UseVisualStyleBackColor = false;
+            buttonDigitZero.Click += ButtonDigitZero_Click;
             // 
             // buttonDigitOne
             // 
@@ -232,6 +245,7 @@
             buttonDigitOne.TabIndex = 13;
             buttonDigitOne.Text = "1";
             buttonDigitOne.UseVisualStyleBackColor = false;
+            buttonDigitOne.Click += ButtonDigitOne_Click;
             // 
             // buttonDigitTwo
             // 
@@ -245,6 +259,7 @@
             buttonDigitTwo.TabIndex = 14;
             buttonDigitTwo.Text = "2";
             buttonDigitTwo.UseVisualStyleBackColor = false;
+            buttonDigitTwo.Click += ButtonDigitTwo_Click;
             // 
             // buttonTransparency
             // 
@@ -259,6 +274,7 @@
             buttonTransparency.TabIndex = 15;
             buttonTransparency.Text = "⌘";
             buttonTransparency.UseVisualStyleBackColor = false;
+            buttonTransparency.Click += ButtonTransparency_Click;
             // 
             // buttonDelete
             // 
@@ -272,6 +288,7 @@
             buttonDelete.TabIndex = 16;
             buttonDelete.Text = "⌫";
             buttonDelete.UseVisualStyleBackColor = false;
+            buttonDelete.Click += ButtonDelete_Click;
             // 
             // buttonReset
             // 
@@ -285,6 +302,7 @@
             buttonReset.TabIndex = 17;
             buttonReset.Text = "AC";
             buttonReset.UseVisualStyleBackColor = false;
+            buttonReset.Click += ButtonReset_Click;
             // 
             // textBoxScreen
             // 

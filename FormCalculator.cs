@@ -1,5 +1,4 @@
 using BasicCalculator.operators;
-using System.Runtime.Intrinsics.X86;
 using System.Text.RegularExpressions;
 
 namespace BasicCalculator
@@ -30,40 +29,6 @@ namespace BasicCalculator
             // Starting Variables: Numbers
             numbers = new double[99];
             index = 0;
-
-            // Results
-            buttonCharResult.Click += ButtonCharResult_Click;
-
-            // Operators
-
-            buttonCharAdd.Click += ButtonCharAdd_Click;
-            buttonCharSubtract.Click += ButtonCharSubtract_Click;
-            buttonCharMultiply.Click += ButtonCharMultiply_Click;
-            buttonCharDivide.Click += ButtonCharDivide_Click;
-
-            // Numbers
-            buttonDigitZero.Click += ButtonDigitZero_Click;
-            buttonDigitOne.Click += ButtonDigitOne_Click;
-            buttonDigitTwo.Click += ButtonDigitTwo_Click;
-            buttonDigitThree.Click += ButtonDigitThree_Click;
-            buttonDigitFour.Click += ButtonDigitFour_Click;
-            buttonDigitFive.Click += ButtonDigitFive_Click;
-            buttonDigitSix.Click += ButtonDigitSix_Click;
-            buttonDigitSeven.Click += ButtonDigitSeven_Click;
-            buttonDigitEight.Click += ButtonDigitEight_Click;
-            buttonDigitNine.Click += ButtonDigitNine_Click;
-
-            // Calculator Default Buttons
-            buttonDelete.Click += ButtonDelete_Click;
-            buttonReset.Click += ButtonReset_Click;
-
-            // Custom Buttons
-            buttonTransparency.Click += ButtonTransparency_Click;
-
-            // Set of base calculator button modifications (form).
-            buttonCharResult.FlatStyle = FlatStyle.Popup;
-            buttonCharResult.ForeColor = Color.Transparent;
-            buttonCharResult.BackColor = Color.FromArgb(150, Color.Purple);
         }
 
         /** Button Click Number */
@@ -190,7 +155,7 @@ namespace BasicCalculator
 
         /** Code Helpers */
 
-            private void HandleDigitButton(object? sender)
+        private void HandleDigitButton(object? sender)
         {
             Button? button = sender as Button;
 
