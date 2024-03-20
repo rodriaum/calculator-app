@@ -66,7 +66,7 @@
             // 
             // buttonCharResult
             // 
-            buttonCharResult.BackColor = Color.FromArgb(150, Color.Purple);
+            buttonCharResult.BackColor = Color.FromArgb(150, 128, 0, 128);
             buttonCharResult.FlatStyle = FlatStyle.Popup;
             buttonCharResult.Font = new Font("Mongolian Baiti", 25F);
             buttonCharResult.ForeColor = Color.Transparent;
@@ -215,7 +215,7 @@
             buttonCharSubtract.Name = "buttonCharSubtract";
             buttonCharSubtract.Size = new Size(51, 56);
             buttonCharSubtract.TabIndex = 11;
-            buttonCharSubtract.Text = "−";
+            buttonCharSubtract.Text = "-";
             buttonCharSubtract.UseVisualStyleBackColor = false;
             buttonCharSubtract.Click += ButtonCharSubtract_Click;
             // 

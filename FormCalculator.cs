@@ -1,4 +1,4 @@
-using BasicCalculator.operators;
+ï»¿using BasicCalculator.operators;
 using System.Text.RegularExpressions;
 
 namespace BasicCalculator
@@ -134,11 +134,11 @@ namespace BasicCalculator
                             textBoxScreen.Text = mathOperator.Subtract(numbers).ToString();
                             break;
 
-                        case "×":
+                        case "Ã—":
                             textBoxScreen.Text = mathOperator.Multiply(numbers).ToString();
                             break;
 
-                        case "÷":
+                        case "Ã·":
                             if (!numbers.Contains(0))
                                 textBoxScreen.Text = mathOperator.Divide(numbers).ToString();
                             else
