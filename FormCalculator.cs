@@ -211,6 +211,8 @@ namespace BasicCalculator
             finish = true;
             charOperator = "";
             numbers = new double[99];
+
+            Thread.Sleep(1000);
         }
     }
 }
