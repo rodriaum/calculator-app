@@ -33,7 +33,7 @@ Esta é uma calculadora básica implementada em C# usando Windows Forms. A calcula
 ## Imagens
 
 <p float="left">
-  <img src="https://imgur.com/VZoVpYn.png" width="400" />
+  <img src="https://imgur.com/VZoVpYn.png" width="250" />
 </p>
 
 ## Licença
