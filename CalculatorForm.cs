@@ -1,22 +1,16 @@
-﻿using BasicCalculator.operators;
-using System.Text.RegularExpressions;
+﻿using BasicCalculator.util;
 
 namespace BasicCalculator
 {
-    public partial class FormCalculator : Form
+    public partial class CalculatorForm : Form
     {
         // Bools Checkers
         public bool finish { get; set; }
         public bool transparency { get; set; }
         // Character Operator
-        public string charOperator { get; set; }
-        // Numbers
-        public double[] numbers { get; set; }
-        public int index { get; set; }
+        public char charOperator { get; set; }
 
-        MathOperator mathOperator = new MathOperator();
-
-        public FormCalculator()
+        public CalculatorForm()
         {
             // Start Component
             InitializeComponent();
@@ -24,11 +18,9 @@ namespace BasicCalculator
             // Starting Variables: Bools Checkers
             finish = false;
             transparency = false;
+
             // Starting Variables: Character Operator
-            charOperator = "";
-            // Starting Variables: Numbers
-            numbers = new double[99];
-            index = 0;
+            charOperator = Util.EmptyChar();
         }
 
         /** Button Click Number */
@@ -64,11 +56,13 @@ namespace BasicCalculator
                 if (!string.IsNullOrEmpty(text))
                 {
                     textBoxScreen.Text = text.Substring(0, text.Length - 1);
-                    numbers[index] = double.NaN;
 
-                    // Checks if the deleted char is not a number, which concludes that it is an operator, and sets the variable as empty.
-                    if (Regex.IsMatch(text, @"^[0-9]+$"))
-                        charOperator = "";
+                    // Portuguese: Verifica se o caractere excluído não é um número, o que conclui que é um operador, e define a variável como vazia.
+                    // English: Checks if the deleted char is not a number, which concludes that it is an operator, and sets the variable as empty.
+                    if (!Util.IsNumber(text))
+                    {
+                        charOperator = Util.EmptyChar();
+                    }
                 }
 
             }
@@ -124,26 +118,40 @@ namespace BasicCalculator
             {
                 if (!string.IsNullOrEmpty(textBoxScreen.Text))
                 {
-                    switch (charOperator)
+                    double a = 0, b = 0;
+
+                    string[] numbers = textBoxScreen.Text.Split(charOperator);
+
+                    if (numbers.Length == 2)
                     {
-                        case "+":
-                            textBoxScreen.Text = mathOperator.Add(numbers).ToString();
-                            break;
+                        double.TryParse(numbers[0], out a);
+                        double.TryParse(numbers[1], out b);
 
-                        case "-":
-                            textBoxScreen.Text = mathOperator.Subtract(numbers).ToString();
-                            break;
+                        switch (charOperator)
+                        {
+                            case '+':
+                                textBoxScreen.Text = Util.DoubleToString(a + b);
+                                break;
 
-                        case "×":
-                            textBoxScreen.Text = mathOperator.Multiply(numbers).ToString();
-                            break;
+                            case '-':
+                                textBoxScreen.Text = Util.DoubleToString(a - b);
+                                break;
 
-                        case "÷":
-                            if (!numbers.Contains(0))
-                                textBoxScreen.Text = mathOperator.Divide(numbers).ToString();
-                            else
-                                Finish(true);
-                            break;
+                            case '×':
+                                textBoxScreen.Text = Util.DoubleToString(a * b);
+                                break;
+
+                            case '÷':
+                                if (b != 0)
+                                {
+                                    textBoxScreen.Text = Util.DoubleToString(a / b);
+                                }
+                                else
+                                {
+                                    Finish(true);
+                                }
+                                break;
+                        }
                     }
                 }
             }
@@ -167,8 +175,6 @@ namespace BasicCalculator
                     finish = false;
                 }
 
-                numbers[index] = Convert.ToDouble(button.Text);
-                index++;
                 textBoxScreen.AppendText(button.Text);
             }
             else
@@ -189,10 +195,10 @@ namespace BasicCalculator
                     finish = false;
                 }
 
-                if (!string.IsNullOrEmpty(textBoxScreen.Text) && charOperator.Length == 0)
+                if (!string.IsNullOrEmpty(textBoxScreen.Text) && charOperator.Equals(Util.EmptyChar()))
                 {
                     textBoxScreen.AppendText(button.Text);
-                    charOperator = button.Text;
+                    charOperator = Convert.ToChar(button.Text);
                 }
             }
             else
@@ -201,7 +207,7 @@ namespace BasicCalculator
             }
         }
 
-        private void Finish(bool isError)
+        private async void Finish(bool isError)
         {
             if (isError)
                 textBoxScreen.Text = "Error";
@@ -209,10 +215,9 @@ namespace BasicCalculator
                 textBoxScreen.Clear();
 
             finish = true;
-            charOperator = "";
-            numbers = new double[99];
+            charOperator = Util.EmptyChar();
 
-            Thread.Sleep(1000);
+            await Task.Delay(500);
         }
     }
 }

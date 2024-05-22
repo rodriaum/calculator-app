@@ -1,6 +1,6 @@
 ﻿namespace BasicCalculator
 {
-    partial class FormCalculator
+    partial class CalculatorForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCalculator));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorForm));
             buttonCharAdd = new Button();
             buttonCharResult = new Button();
             buttonDigitThree = new Button();
@@ -66,7 +66,7 @@
             // 
             // buttonCharResult
             // 
-            buttonCharResult.BackColor = Color.FromArgb(150, 128, 0, 128);
+            buttonCharResult.BackColor = SystemColors.HotTrack;
             buttonCharResult.FlatStyle = FlatStyle.Popup;
             buttonCharResult.Font = new Font("Mongolian Baiti", 25F);
             buttonCharResult.ForeColor = Color.Transparent;
@@ -316,11 +316,12 @@
             textBoxScreen.TabIndex = 18;
             textBoxScreen.TextAlign = HorizontalAlignment.Right;
             // 
-            // FormCalculator
+            // CalculatorForm
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(244, 361);
             Controls.Add(buttonDigitSeven);
             Controls.Add(textBoxScreen);
@@ -347,7 +348,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
             MaximizeBox = false;
-            Name = "FormCalculator";
+            Name = "CalculatorForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Calculadora Básica";
             ResumeLayout(false);

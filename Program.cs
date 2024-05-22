@@ -9,7 +9,7 @@ namespace BasicCalculator
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new FormCalculator());
+            Application.Run(new CalculatorForm());
         }
     }
 }

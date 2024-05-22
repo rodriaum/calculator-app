@@ -26,38 +26,15 @@ Esta é uma calculadora básica implementada em C# usando Windows Forms. A calcula
 
 ## Estrutura do Projeto
 
-- `FormCalculator.cs`: Contém a lógica principal da aplicação.
-- `FormCalculator.Designer.cs`: Contém o código gerado automaticamente pelo Visual Studio para definir a interface do usuário.
+- `CalculatorForm.cs`: Contém a lógica principal da aplicação.
+- `CalculatorForm.Designer.cs`: Contém o código gerado automaticamente pelo Visual Studio para definir a interface do usuário.
 - `Program.cs`: Arquivo de inicialização do aplicativo.
 
-## Exemplo de Uso de Arrays Double
+## Imagens
 
-Este projeto utiliza arrays de double para armazenar os números inseridos pelo usuário. A classe `MathOperator.cs` é responsável por acessar esses arrays e realizar a operação selecionada.
-
-```csharp
-    public double[] numbers { get; set; }
-
-    double total = -1;
-
-    switch (charOperator)
-    {
-        case "+":
-            total = mathOperator.Add(numbers);
-            break;
-
-        case "-":
-            total = mathOperator.Subtract(numbers);
-            break;
-
-        case "×":
-            total = mathOperator.Multiply(numbers);
-            break;
-
-        case "÷":
-            total = mathOperator.Divide(numbers);
-            break;
-    }
-```
+<p float="left">
+  <img src="https://imgur.com/VZoVpYn.png" width="800" />
+</p>
 
 ## Licença
 
