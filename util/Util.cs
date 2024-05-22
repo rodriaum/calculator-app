@@ -1,5 +1,6 @@
 ﻿using static System.Net.Mime.MediaTypeNames;
 using System.Text.RegularExpressions;
+using BasicCalculator.Properties;
 
 namespace BasicCalculator.util
 {

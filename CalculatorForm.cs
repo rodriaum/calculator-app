@@ -7,8 +7,12 @@ namespace BasicCalculator
         // Bools Checkers
         public bool finish { get; set; }
         public bool transparency { get; set; }
+
         // Character Operator
         public char charOperator { get; set; }
+
+        // Images
+        public Image? backgroundImage { get; set; }
 
         public CalculatorForm()
         {
@@ -21,6 +25,9 @@ namespace BasicCalculator
 
             // Starting Variables: Character Operator
             charOperator = Util.EmptyChar();
+
+            // Images
+            backgroundImage = this.BackgroundImage;
         }
 
         /** Button Click Number */
@@ -97,9 +104,11 @@ namespace BasicCalculator
                 {
                     BackColor = Color.DarkGray;
                     TransparencyKey = Color.DarkGray;
+                    BackgroundImage = backgroundImage;
                 }
                 else
                 {
+                    BackgroundImage = null;
                     BackColor = Color.Empty;
                     TransparencyKey = Color.Empty;
                 }
@@ -118,14 +127,12 @@ namespace BasicCalculator
             {
                 if (!string.IsNullOrEmpty(textBoxScreen.Text))
                 {
-                    double a = 0, b = 0;
-
                     string[] numbers = textBoxScreen.Text.Split(charOperator);
 
                     if (numbers.Length == 2)
                     {
-                        double.TryParse(numbers[0], out a);
-                        double.TryParse(numbers[1], out b);
+                        double.TryParse(numbers[0], out double a);
+                        double.TryParse(numbers[1], out double b);
 
                         switch (charOperator)
                         {
@@ -142,7 +149,7 @@ namespace BasicCalculator
                                 break;
 
                             case '÷':
-                                if (b != 0)
+                                if (a != 0 || b != 0)
                                 {
                                     textBoxScreen.Text = Util.DoubleToString(a / b);
                                 }
