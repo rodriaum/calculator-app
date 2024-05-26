@@ -64,9 +64,13 @@ namespace BasicCalculator
                 {
                     textBoxScreen.Text = text.Substring(0, text.Length - 1);
 
+                    // Portuguese: Pega o último caractere na string.
+                    // English: Get the last char on string.
+                    char last = text[text.Length - 1];
+                    
                     // Portuguese: Verifica se o caractere excluído não é um número, o que conclui que é um operador, e define a variável como vazia.
                     // English: Checks if the deleted char is not a number, which concludes that it is an operator, and sets the variable as empty.
-                    if (!Util.IsNumber(text))
+                    if (!Util.IsNumber(last.ToString()))
                     {
                         charOperator = Util.EmptyChar();
                     }
@@ -149,7 +153,7 @@ namespace BasicCalculator
                                 break;
 
                             case '÷':
-                                if (a != 0 || b != 0)
+                                if (a != 0 && b != 0)
                                 {
                                     textBoxScreen.Text = Util.DoubleToString(a / b);
                                 }

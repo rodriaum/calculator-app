@@ -1,6 +1,4 @@
-﻿using static System.Net.Mime.MediaTypeNames;
-using System.Text.RegularExpressions;
-using BasicCalculator.Properties;
+﻿using System.Text.RegularExpressions;
 
 namespace BasicCalculator.util
 {
@@ -13,7 +11,7 @@ namespace BasicCalculator.util
 
         public static bool IsNumber(string s)
         {
-            return Regex.IsMatch(s, @"^-?\d+(\.\d+)?$");
+            return Regex.IsMatch(s, @"^\d+$");
         }
 
         public static char EmptyChar() 
