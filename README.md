@@ -1,13 +1,10 @@
 # Calculadora Básica em Windows Forms C#
 
-Esta é uma calculadora básica implementada em C# usando Windows Forms. A calculadora suporta operações básicas como adição, subtração, multiplicação e divisão.
+Esta é uma calculadora de cálculo básica implementada em C# usando Windows Forms. A calculadora suporta operações básicas como adição, subtração, multiplicação e divisão.
 
 ## Funcionalidades
 
-- Adição de dois números.
-- Subtração de dois números.
-- Multiplicação de dois números.
-- Divisão de dois números.
+- Adição, subtração, multiplicação e divisão de números com a possibilidade de separar com "(" e ")".
 
 ## Requisitos
 
@@ -29,11 +26,12 @@ Esta é uma calculadora básica implementada em C# usando Windows Forms. A calcula
 - `CalculatorForm.cs`: Contém a lógica principal da aplicação.
 - `CalculatorForm.Designer.cs`: Contém o código gerado automaticamente pelo Visual Studio para definir a interface do usuário.
 - `Program.cs`: Arquivo de inicialização do aplicativo.
+- `Utils.cs`: Métodos utilitários.
 
 ## Imagens
 
 <p float="left">
-  <img src="https://imgur.com/VZoVpYn.png" width="250" />
+  <img src="https://imgur.com/qR04faF.png" width="250" />
 </p>
 
 ## Licença
