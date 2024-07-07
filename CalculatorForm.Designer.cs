@@ -47,7 +47,9 @@
             buttonTransparency = new Button();
             buttonDelete = new Button();
             buttonReset = new Button();
-            textBoxScreen = new TextBox();
+            screenTextBox = new TextBox();
+            secondBracketButton = new Button();
+            firstBracketButton = new Button();
             SuspendLayout();
             // 
             // buttonCharAdd
@@ -67,7 +69,6 @@
             // buttonCharResult
             // 
             buttonCharResult.BackColor = SystemColors.HotTrack;
-            buttonCharResult.FlatStyle = FlatStyle.Popup;
             buttonCharResult.Font = new Font("Mongolian Baiti", 25F);
             buttonCharResult.ForeColor = Color.Transparent;
             buttonCharResult.Location = new Point(180, 298);
@@ -304,17 +305,45 @@
             buttonReset.UseVisualStyleBackColor = false;
             buttonReset.Click += ButtonReset_Click;
             // 
-            // textBoxScreen
+            // screenTextBox
             // 
-            textBoxScreen.BorderStyle = BorderStyle.FixedSingle;
-            textBoxScreen.Cursor = Cursors.No;
-            textBoxScreen.Font = new Font("Segoe UI", 15F);
-            textBoxScreen.Location = new Point(12, 8);
-            textBoxScreen.Name = "textBoxScreen";
-            textBoxScreen.ReadOnly = true;
-            textBoxScreen.Size = new Size(219, 34);
-            textBoxScreen.TabIndex = 18;
-            textBoxScreen.TextAlign = HorizontalAlignment.Right;
+            screenTextBox.BorderStyle = BorderStyle.FixedSingle;
+            screenTextBox.Cursor = Cursors.No;
+            screenTextBox.Font = new Font("Segoe UI", 15F);
+            screenTextBox.Location = new Point(12, 8);
+            screenTextBox.Name = "screenTextBox";
+            screenTextBox.ReadOnly = true;
+            screenTextBox.Size = new Size(219, 34);
+            screenTextBox.TabIndex = 18;
+            screenTextBox.TextAlign = HorizontalAlignment.Right;
+            // 
+            // secondBracketButton
+            // 
+            secondBracketButton.BackColor = SystemColors.Control;
+            secondBracketButton.FlatStyle = FlatStyle.System;
+            secondBracketButton.Font = new Font("Mongolian Baiti", 25F);
+            secondBracketButton.Location = new Point(124, 298);
+            secondBracketButton.Margin = new Padding(4, 3, 4, 3);
+            secondBracketButton.Name = "secondBracketButton";
+            secondBracketButton.Size = new Size(51, 56);
+            secondBracketButton.TabIndex = 19;
+            secondBracketButton.Text = ")";
+            secondBracketButton.UseVisualStyleBackColor = false;
+            secondBracketButton.Click += secondBracketButton_Click;
+            // 
+            // firstBracketButton
+            // 
+            firstBracketButton.BackColor = SystemColors.Control;
+            firstBracketButton.FlatStyle = FlatStyle.System;
+            firstBracketButton.Font = new Font("Mongolian Baiti", 25F);
+            firstBracketButton.Location = new Point(13, 298);
+            firstBracketButton.Margin = new Padding(4, 3, 4, 3);
+            firstBracketButton.Name = "firstBracketButton";
+            firstBracketButton.Size = new Size(51, 56);
+            firstBracketButton.TabIndex = 20;
+            firstBracketButton.Text = "(";
+            firstBracketButton.UseVisualStyleBackColor = false;
+            firstBracketButton.Click += firstBracketButton_Click;
             // 
             // CalculatorForm
             // 
@@ -323,8 +352,10 @@
             AutoSize = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(244, 361);
+            Controls.Add(firstBracketButton);
+            Controls.Add(secondBracketButton);
             Controls.Add(buttonDigitSeven);
-            Controls.Add(textBoxScreen);
+            Controls.Add(screenTextBox);
             Controls.Add(buttonReset);
             Controls.Add(buttonDelete);
             Controls.Add(buttonTransparency);
@@ -375,6 +406,8 @@
         private Button buttonTransparency;
         private Button buttonDelete;
         private Button buttonReset;
-        private TextBox textBoxScreen;
+        private TextBox screenTextBox;
+        private Button secondBracketButton;
+        private Button firstBracketButton;
     }
 }

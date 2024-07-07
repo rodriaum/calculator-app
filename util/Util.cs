@@ -14,9 +14,14 @@ namespace BasicCalculator.util
             return Regex.IsMatch(s, @"^\d+$");
         }
 
-        public static char EmptyChar() 
-        { 
-            return '\0'; 
+        public static char EmptyChar()
+        {
+            return '\0';
+        }
+
+        public static double EvaluateExpression(string expression)
+        {
+            return Convert.ToDouble(new System.Data.DataTable().Compute(expression.Replace(" ", ""), null));
         }
     }
 }

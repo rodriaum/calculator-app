@@ -8,9 +8,6 @@ namespace BasicCalculator
         public bool finish { get; set; }
         public bool transparency { get; set; }
 
-        // Character Operator
-        public char charOperator { get; set; }
-
         // Images
         public Image? backgroundImage { get; set; }
 
@@ -23,25 +20,28 @@ namespace BasicCalculator
             finish = false;
             transparency = false;
 
-            // Starting Variables: Character Operator
-            charOperator = Util.EmptyChar();
-
             // Images
             backgroundImage = this.BackgroundImage;
         }
 
         /** Button Click Number */
 
-        private void ButtonDigitNine_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-        private void ButtonDigitEight_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-        private void ButtonDigitSeven_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-        private void ButtonDigitSix_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-        private void ButtonDigitFive_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-        private void ButtonDigitFour_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-        private void ButtonDigitThree_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-        private void ButtonDigitTwo_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-        private void ButtonDigitOne_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
-        private void ButtonDigitZero_Click(object? sender, EventArgs e) => HandleDigitButton(sender);
+        private void ButtonDigitNine_Click(object? sender, EventArgs e) => HandleCharacterButton(sender);
+        private void ButtonDigitEight_Click(object? sender, EventArgs e) => HandleCharacterButton(sender);
+        private void ButtonDigitSeven_Click(object? sender, EventArgs e) => HandleCharacterButton(sender);
+        private void ButtonDigitSix_Click(object? sender, EventArgs e) => HandleCharacterButton(sender);
+        private void ButtonDigitFive_Click(object? sender, EventArgs e) => HandleCharacterButton(sender);
+        private void ButtonDigitFour_Click(object? sender, EventArgs e) => HandleCharacterButton(sender);
+        private void ButtonDigitThree_Click(object? sender, EventArgs e) => HandleCharacterButton(sender);
+        private void ButtonDigitTwo_Click(object? sender, EventArgs e) => HandleCharacterButton(sender);
+        private void ButtonDigitOne_Click(object? sender, EventArgs e) => HandleCharacterButton(sender);
+        private void ButtonDigitZero_Click(object? sender, EventArgs e) => HandleCharacterButton(sender);
+
+        /** Button Click Bracket */
+
+
+        private void firstBracketButton_Click(object sender, EventArgs e) => HandleCharacterButton(sender); // Represents "("
+        private void secondBracketButton_Click(object sender, EventArgs e) => HandleCharacterButton(sender); // Represents ")"
 
         /** Button Click Operator */
 
@@ -58,29 +58,19 @@ namespace BasicCalculator
 
             if (button != null)
             {
-                string text = textBoxScreen.Text;
+                string text = screenTextBox.Text;
 
                 if (!string.IsNullOrEmpty(text))
                 {
-                    textBoxScreen.Text = text.Substring(0, text.Length - 1);
-
-                    // Portuguese: Pega o último caractere na string.
-                    // English: Get the last char on string.
-                    char last = text[text.Length - 1];
-                    
-                    // Portuguese: Verifica se o caractere excluído não é um número, o que conclui que é um operador, e define a variável como vazia.
-                    // English: Checks if the deleted char is not a number, which concludes that it is an operator, and sets the variable as empty.
-                    if (!Util.IsNumber(last.ToString()))
-                    {
-                        charOperator = Util.EmptyChar();
-                    }
+                    screenTextBox.Text = text.Substring(0, text.Length - 1);
                 }
 
             }
             else
             {
-                Finish(true);
+                Finish(true, null);
             }
+
         }
 
         private void ButtonReset_Click(object? sender, EventArgs e)
@@ -89,13 +79,14 @@ namespace BasicCalculator
 
             if (button != null)
             {
-                if (!string.IsNullOrEmpty(textBoxScreen.Text))
-                    Finish(false);
+                if (!string.IsNullOrEmpty(screenTextBox.Text))
+                    Finish(false, null);
             }
             else
             {
-                Finish(true);
+                Finish(true, null);
             }
+
         }
 
         private void ButtonTransparency_Click(object? sender, EventArgs e)
@@ -119,6 +110,7 @@ namespace BasicCalculator
 
                 transparency = !transparency;
             }
+
         }
 
         /** Button Click Result */
@@ -129,52 +121,34 @@ namespace BasicCalculator
 
             if (button != null)
             {
-                if (!string.IsNullOrEmpty(textBoxScreen.Text))
+                // Before performing the calculation, we must replace mathematical operators with arithmetic operators.
+                screenTextBox.Text = screenTextBox.Text
+                    .Replace("", "")
+                    .Replace("÷", "/");
+
+                if (!string.IsNullOrEmpty(screenTextBox.Text))
                 {
-                    string[] numbers = textBoxScreen.Text.Split(charOperator);
-
-                    if (numbers.Length == 2)
+                    try
                     {
-                        double.TryParse(numbers[0], out double a);
-                        double.TryParse(numbers[1], out double b);
-
-                        switch (charOperator)
-                        {
-                            case '+':
-                                textBoxScreen.Text = Util.DoubleToString(a + b);
-                                break;
-
-                            case '-':
-                                textBoxScreen.Text = Util.DoubleToString(a - b);
-                                break;
-
-                            case '×':
-                                textBoxScreen.Text = Util.DoubleToString(a * b);
-                                break;
-
-                            case '÷':
-                                if (a != 0 && b != 0)
-                                {
-                                    textBoxScreen.Text = Util.DoubleToString(a / b);
-                                }
-                                else
-                                {
-                                    Finish(true);
-                                }
-                                break;
-                        }
+                        screenTextBox.Text = Util.DoubleToString(Util.EvaluateExpression(screenTextBox.Text));
+                    }
+                    catch (Exception ex)
+                    {
+                        Finish(true, ex.Message);
                     }
                 }
+
             }
             else
             {
-                Finish(true);
+                Finish(true, null);
             }
+
         }
 
         /** Code Helpers */
 
-        private void HandleDigitButton(object? sender)
+        private void HandleCharacterButton(object? sender)
         {
             Button? button = sender as Button;
 
@@ -182,15 +156,15 @@ namespace BasicCalculator
             {
                 if (finish)
                 {
-                    textBoxScreen.Clear();
+                    screenTextBox.Clear();
                     finish = false;
                 }
 
-                textBoxScreen.AppendText(button.Text);
+                screenTextBox.AppendText(button.Text);
             }
             else
             {
-                Finish(true);
+                Finish(true, "");
             }
         }
 
@@ -202,33 +176,46 @@ namespace BasicCalculator
             {
                 if (finish)
                 {
-                    textBoxScreen.Clear();
+                    screenTextBox.Clear();
                     finish = false;
                 }
 
-                if (!string.IsNullOrEmpty(textBoxScreen.Text) && charOperator.Equals(Util.EmptyChar()))
-                {
-                    textBoxScreen.AppendText(button.Text);
-                    charOperator = Convert.ToChar(button.Text);
-                }
+                if (!string.IsNullOrEmpty(screenTextBox.Text))
+                    screenTextBox.AppendText(button.Text);
+
             }
             else
             {
-                Finish(true);
+                Finish(true, null);
             }
+
         }
 
-        private async void Finish(bool isError)
+        // The string "error" will only be used as a boolean parameter "isError" is true.
+        private async void Finish(bool isError, string? error)
         {
             if (isError)
-                textBoxScreen.Text = "Error";
+            {
+
+                if (!string.IsNullOrEmpty(error))
+                {
+                    screenTextBox.Text = error;
+                }
+                else
+                {
+                    screenTextBox.Text = "Error";
+                }
+
+            }
             else
-                textBoxScreen.Clear();
+            {
+                screenTextBox.Clear();
+            }
 
             finish = true;
-            charOperator = Util.EmptyChar();
 
             await Task.Delay(500);
         }
+
     }
 }
