@@ -1,15 +1,23 @@
 ﻿using BasicCalculator.util;
+using BasicCalculator.Util.Math;
+
+/*
+ * Copyright (c) 2024 Rodrigo Ferreira
+ * This file is part of a project (BasicCalculator) with MIT License.
+ * For more information about permissions, visit the link below.
+ * https://github.com/rodriaum/BasicCalculatorl?tab=MIT-1-ov-file#readme
+ */
 
 namespace BasicCalculator
 {
     public partial class CalculatorForm : Form
     {
         // Bools Checkers
-        public bool finish { get; set; }
-        public bool transparency { get; set; }
+        public bool HasFinishedCalculation { get; set; }
+        public bool AppTransparencyActive { get; set; }
 
         // Images
-        public Image? backgroundImage { get; set; }
+        public Image? AppBackgroundImage { get; set; }
 
         public CalculatorForm()
         {
@@ -17,11 +25,11 @@ namespace BasicCalculator
             InitializeComponent();
 
             // Starting Variables: Bools Checkers
-            finish = false;
-            transparency = false;
+            HasFinishedCalculation = false;
+            AppTransparencyActive = false;
 
             // Images
-            backgroundImage = this.BackgroundImage;
+            AppBackgroundImage = this.BackgroundImage;
         }
 
         /** Button Click Number */
@@ -40,8 +48,8 @@ namespace BasicCalculator
         /** Button Click Bracket */
 
 
-        private void firstBracketButton_Click(object sender, EventArgs e) => HandleCharacterButton(sender); // Represents "("
-        private void secondBracketButton_Click(object sender, EventArgs e) => HandleCharacterButton(sender); // Represents ")"
+        private void FirstBracketButton_Click(object sender, EventArgs e) => HandleCharacterButton(sender); // Represents "("
+        private void SecondBracketButton_Click(object sender, EventArgs e) => HandleCharacterButton(sender); // Represents ")"
 
         /** Button Click Operator */
 
@@ -54,7 +62,7 @@ namespace BasicCalculator
 
         private void ButtonDelete_Click(object? sender, EventArgs e)
         {
-            Button? button = sender as Button;
+            Button button = deleteButton;
 
             if (button != null)
             {
@@ -68,38 +76,38 @@ namespace BasicCalculator
             }
             else
             {
-                Finish(true, null);
+                FinishAndRefresh(true, null);
             }
 
         }
 
         private void ButtonReset_Click(object? sender, EventArgs e)
         {
-            Button? button = sender as Button;
+            Button button = resetButton;
 
             if (button != null)
             {
                 if (!string.IsNullOrEmpty(screenTextBox.Text))
-                    Finish(false, null);
+                    FinishAndRefresh(false, null);
             }
             else
             {
-                Finish(true, null);
+                FinishAndRefresh(true, null);
             }
 
         }
 
         private void ButtonTransparency_Click(object? sender, EventArgs e)
         {
-            Button? button = sender as Button;
+            Button button = transparencyButton;
 
             if (button != null)
             {
-                if (!transparency)
+                if (!AppTransparencyActive)
                 {
                     BackColor = Color.DarkGray;
                     TransparencyKey = Color.DarkGray;
-                    BackgroundImage = backgroundImage;
+                    BackgroundImage = AppBackgroundImage;
                 }
                 else
                 {
@@ -108,7 +116,7 @@ namespace BasicCalculator
                     TransparencyKey = Color.Empty;
                 }
 
-                transparency = !transparency;
+                AppTransparencyActive = !AppTransparencyActive;
             }
 
         }
@@ -117,31 +125,32 @@ namespace BasicCalculator
 
         private void ButtonCharResult_Click(object? sender, EventArgs e)
         {
-            Button? button = sender as Button;
+            Button button = charResultButton;
 
             if (button != null)
             {
                 // Before performing the calculation, we must replace mathematical operators with arithmetic operators.
                 screenTextBox.Text = screenTextBox.Text
-                    .Replace("", "")
+                    .Replace("×", "*")
                     .Replace("÷", "/");
 
                 if (!string.IsNullOrEmpty(screenTextBox.Text))
                 {
                     try
                     {
-                        screenTextBox.Text = Util.DoubleToString(Util.EvaluateExpression(screenTextBox.Text));
+                        
+                        screenTextBox.Text = AppUtils.DoubleToString(AppMath.EvaluateExpression(screenTextBox.Text));
                     }
                     catch (Exception ex)
                     {
-                        Finish(true, ex.Message);
+                        FinishAndRefresh(true, ex.Message);
                     }
                 }
 
             }
             else
             {
-                Finish(true, null);
+                FinishAndRefresh(true, null);
             }
 
         }
@@ -154,17 +163,17 @@ namespace BasicCalculator
 
             if (button != null)
             {
-                if (finish)
+                if (HasFinishedCalculation)
                 {
                     screenTextBox.Clear();
-                    finish = false;
+                    HasFinishedCalculation = false;
                 }
 
                 screenTextBox.AppendText(button.Text);
             }
             else
             {
-                Finish(true, "");
+                FinishAndRefresh(true, "");
             }
         }
 
@@ -174,10 +183,10 @@ namespace BasicCalculator
 
             if (button != null)
             {
-                if (finish)
+                if (HasFinishedCalculation)
                 {
                     screenTextBox.Clear();
-                    finish = false;
+                    HasFinishedCalculation = false;
                 }
 
                 if (!string.IsNullOrEmpty(screenTextBox.Text))
@@ -186,13 +195,13 @@ namespace BasicCalculator
             }
             else
             {
-                Finish(true, null);
+                FinishAndRefresh(true, null);
             }
 
         }
 
         // The string "error" will only be used as a boolean parameter "isError" is true.
-        private async void Finish(bool isError, string? error)
+        private async void FinishAndRefresh(bool isError, string? error)
         {
             if (isError)
             {
@@ -206,16 +215,22 @@ namespace BasicCalculator
                     screenTextBox.Text = "Error";
                 }
 
+
             }
             else
             {
                 screenTextBox.Clear();
             }
 
-            finish = true;
+            HasFinishedCalculation = true;
 
             await Task.Delay(500);
         }
 
+        private void CalculatorForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.ToString() == Keys.Enter.ToString())
+                ButtonDigitNine_Click(sender, e);
+        }
     }
 }

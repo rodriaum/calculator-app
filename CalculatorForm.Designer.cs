@@ -29,281 +29,281 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorForm));
-            buttonCharAdd = new Button();
-            buttonCharResult = new Button();
-            buttonDigitThree = new Button();
-            buttonDigitSeven = new Button();
-            buttonDigitEight = new Button();
-            buttonDigitNine = new Button();
-            buttonDigitFour = new Button();
-            buttonDigitFive = new Button();
-            buttonDigitSix = new Button();
-            buttonCharDivide = new Button();
-            buttonCharMultiply = new Button();
-            buttonCharSubtract = new Button();
-            buttonDigitZero = new Button();
-            buttonDigitOne = new Button();
-            buttonDigitTwo = new Button();
-            buttonTransparency = new Button();
-            buttonDelete = new Button();
-            buttonReset = new Button();
+            charAddButton = new Button();
+            charResultButton = new Button();
+            digitThreeButton = new Button();
+            digitSevenButton = new Button();
+            digitEightButton = new Button();
+            digitNineButton = new Button();
+            digitFourButton = new Button();
+            digitFiveButton = new Button();
+            digitSixButton = new Button();
+            charDivideButton = new Button();
+            charMultiplyButton = new Button();
+            charSubtractButton = new Button();
+            digitZeroButton = new Button();
+            digitOneButton = new Button();
+            digitTwoButton = new Button();
+            transparencyButton = new Button();
+            deleteButton = new Button();
+            resetButton = new Button();
             screenTextBox = new TextBox();
             secondBracketButton = new Button();
             firstBracketButton = new Button();
             SuspendLayout();
             // 
-            // buttonCharAdd
+            // charAddButton
             // 
-            buttonCharAdd.BackColor = SystemColors.Control;
-            buttonCharAdd.FlatStyle = FlatStyle.System;
-            buttonCharAdd.Font = new Font("Mongolian Baiti", 25F);
-            buttonCharAdd.Location = new Point(180, 234);
-            buttonCharAdd.Margin = new Padding(4, 3, 4, 3);
-            buttonCharAdd.Name = "buttonCharAdd";
-            buttonCharAdd.Size = new Size(51, 56);
-            buttonCharAdd.TabIndex = 0;
-            buttonCharAdd.Text = "+";
-            buttonCharAdd.UseVisualStyleBackColor = false;
-            buttonCharAdd.Click += ButtonCharAdd_Click;
+            charAddButton.BackColor = SystemColors.Control;
+            charAddButton.FlatStyle = FlatStyle.System;
+            charAddButton.Font = new Font("Mongolian Baiti", 25F);
+            charAddButton.Location = new Point(180, 234);
+            charAddButton.Margin = new Padding(4, 3, 4, 3);
+            charAddButton.Name = "buttonCharAdd";
+            charAddButton.Size = new Size(51, 56);
+            charAddButton.TabIndex = 0;
+            charAddButton.Text = "+";
+            charAddButton.UseVisualStyleBackColor = false;
+            charAddButton.Click += ButtonCharAdd_Click;
             // 
-            // buttonCharResult
+            // charResultButton
             // 
-            buttonCharResult.BackColor = SystemColors.HotTrack;
-            buttonCharResult.Font = new Font("Mongolian Baiti", 25F);
-            buttonCharResult.ForeColor = Color.Transparent;
-            buttonCharResult.Location = new Point(180, 298);
-            buttonCharResult.Margin = new Padding(4, 3, 4, 3);
-            buttonCharResult.Name = "buttonCharResult";
-            buttonCharResult.Size = new Size(51, 56);
-            buttonCharResult.TabIndex = 1;
-            buttonCharResult.Text = "=";
-            buttonCharResult.UseVisualStyleBackColor = false;
-            buttonCharResult.Click += ButtonCharResult_Click;
+            charResultButton.BackColor = SystemColors.HotTrack;
+            charResultButton.Font = new Font("Mongolian Baiti", 25F);
+            charResultButton.ForeColor = Color.Transparent;
+            charResultButton.Location = new Point(180, 298);
+            charResultButton.Margin = new Padding(4, 3, 4, 3);
+            charResultButton.Name = "buttonCharResult";
+            charResultButton.Size = new Size(51, 56);
+            charResultButton.TabIndex = 1;
+            charResultButton.Text = "=";
+            charResultButton.UseVisualStyleBackColor = false;
+            charResultButton.Click += ButtonCharResult_Click;
             // 
-            // buttonDigitThree
+            // digitThreeButton
             // 
-            buttonDigitThree.BackColor = SystemColors.Control;
-            buttonDigitThree.FlatStyle = FlatStyle.System;
-            buttonDigitThree.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitThree.Location = new Point(124, 234);
-            buttonDigitThree.Margin = new Padding(4, 3, 4, 3);
-            buttonDigitThree.Name = "buttonDigitThree";
-            buttonDigitThree.Size = new Size(51, 56);
-            buttonDigitThree.TabIndex = 2;
-            buttonDigitThree.Text = "3";
-            buttonDigitThree.UseVisualStyleBackColor = false;
-            buttonDigitThree.Click += ButtonDigitThree_Click;
+            digitThreeButton.BackColor = SystemColors.Control;
+            digitThreeButton.FlatStyle = FlatStyle.System;
+            digitThreeButton.Font = new Font("Mongolian Baiti", 25F);
+            digitThreeButton.Location = new Point(124, 234);
+            digitThreeButton.Margin = new Padding(4, 3, 4, 3);
+            digitThreeButton.Name = "buttonDigitThree";
+            digitThreeButton.Size = new Size(51, 56);
+            digitThreeButton.TabIndex = 2;
+            digitThreeButton.Text = "3";
+            digitThreeButton.UseVisualStyleBackColor = false;
+            digitThreeButton.Click += ButtonDigitThree_Click;
             // 
-            // buttonDigitSeven
+            // digitSevenButton
             // 
-            buttonDigitSeven.BackColor = SystemColors.Control;
-            buttonDigitSeven.FlatStyle = FlatStyle.System;
-            buttonDigitSeven.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitSeven.Location = new Point(12, 108);
-            buttonDigitSeven.Margin = new Padding(4, 3, 4, 3);
-            buttonDigitSeven.Name = "buttonDigitSeven";
-            buttonDigitSeven.Size = new Size(51, 56);
-            buttonDigitSeven.TabIndex = 3;
-            buttonDigitSeven.Text = "7";
-            buttonDigitSeven.UseVisualStyleBackColor = false;
-            buttonDigitSeven.Click += ButtonDigitSeven_Click;
+            digitSevenButton.BackColor = SystemColors.Control;
+            digitSevenButton.FlatStyle = FlatStyle.System;
+            digitSevenButton.Font = new Font("Mongolian Baiti", 25F);
+            digitSevenButton.Location = new Point(12, 108);
+            digitSevenButton.Margin = new Padding(4, 3, 4, 3);
+            digitSevenButton.Name = "buttonDigitSeven";
+            digitSevenButton.Size = new Size(51, 56);
+            digitSevenButton.TabIndex = 3;
+            digitSevenButton.Text = "7";
+            digitSevenButton.UseVisualStyleBackColor = false;
+            digitSevenButton.Click += ButtonDigitSeven_Click;
             // 
-            // buttonDigitEight
+            // digitEightButton
             // 
-            buttonDigitEight.BackColor = SystemColors.Control;
-            buttonDigitEight.FlatStyle = FlatStyle.System;
-            buttonDigitEight.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitEight.Location = new Point(68, 108);
-            buttonDigitEight.Margin = new Padding(4, 3, 4, 3);
-            buttonDigitEight.Name = "buttonDigitEight";
-            buttonDigitEight.Size = new Size(51, 56);
-            buttonDigitEight.TabIndex = 4;
-            buttonDigitEight.Text = "8";
-            buttonDigitEight.UseVisualStyleBackColor = false;
-            buttonDigitEight.Click += ButtonDigitEight_Click;
+            digitEightButton.BackColor = SystemColors.Control;
+            digitEightButton.FlatStyle = FlatStyle.System;
+            digitEightButton.Font = new Font("Mongolian Baiti", 25F);
+            digitEightButton.Location = new Point(68, 108);
+            digitEightButton.Margin = new Padding(4, 3, 4, 3);
+            digitEightButton.Name = "buttonDigitEight";
+            digitEightButton.Size = new Size(51, 56);
+            digitEightButton.TabIndex = 4;
+            digitEightButton.Text = "8";
+            digitEightButton.UseVisualStyleBackColor = false;
+            digitEightButton.Click += ButtonDigitEight_Click;
             // 
-            // buttonDigitNine
+            // digitNineButton
             // 
-            buttonDigitNine.BackColor = SystemColors.Control;
-            buttonDigitNine.FlatStyle = FlatStyle.System;
-            buttonDigitNine.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitNine.Location = new Point(124, 108);
-            buttonDigitNine.Margin = new Padding(4, 3, 4, 3);
-            buttonDigitNine.Name = "buttonDigitNine";
-            buttonDigitNine.Size = new Size(51, 56);
-            buttonDigitNine.TabIndex = 5;
-            buttonDigitNine.Text = "9";
-            buttonDigitNine.UseVisualStyleBackColor = false;
-            buttonDigitNine.Click += ButtonDigitNine_Click;
+            digitNineButton.BackColor = SystemColors.Control;
+            digitNineButton.FlatStyle = FlatStyle.System;
+            digitNineButton.Font = new Font("Mongolian Baiti", 25F);
+            digitNineButton.Location = new Point(124, 108);
+            digitNineButton.Margin = new Padding(4, 3, 4, 3);
+            digitNineButton.Name = "buttonDigitNine";
+            digitNineButton.Size = new Size(51, 56);
+            digitNineButton.TabIndex = 5;
+            digitNineButton.Text = "9";
+            digitNineButton.UseVisualStyleBackColor = false;
+            digitNineButton.Click += ButtonDigitNine_Click;
             // 
-            // buttonDigitFour
+            // digitFourButton
             // 
-            buttonDigitFour.BackColor = SystemColors.Control;
-            buttonDigitFour.FlatStyle = FlatStyle.System;
-            buttonDigitFour.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitFour.Location = new Point(12, 171);
-            buttonDigitFour.Margin = new Padding(4, 3, 4, 3);
-            buttonDigitFour.Name = "buttonDigitFour";
-            buttonDigitFour.Size = new Size(51, 56);
-            buttonDigitFour.TabIndex = 6;
-            buttonDigitFour.Text = "4";
-            buttonDigitFour.UseVisualStyleBackColor = false;
-            buttonDigitFour.Click += ButtonDigitFour_Click;
+            digitFourButton.BackColor = SystemColors.Control;
+            digitFourButton.FlatStyle = FlatStyle.System;
+            digitFourButton.Font = new Font("Mongolian Baiti", 25F);
+            digitFourButton.Location = new Point(12, 171);
+            digitFourButton.Margin = new Padding(4, 3, 4, 3);
+            digitFourButton.Name = "buttonDigitFour";
+            digitFourButton.Size = new Size(51, 56);
+            digitFourButton.TabIndex = 6;
+            digitFourButton.Text = "4";
+            digitFourButton.UseVisualStyleBackColor = false;
+            digitFourButton.Click += ButtonDigitFour_Click;
             // 
-            // buttonDigitFive
+            // digitFiveButton
             // 
-            buttonDigitFive.BackColor = SystemColors.Control;
-            buttonDigitFive.FlatStyle = FlatStyle.System;
-            buttonDigitFive.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitFive.Location = new Point(68, 171);
-            buttonDigitFive.Margin = new Padding(4, 3, 4, 3);
-            buttonDigitFive.Name = "buttonDigitFive";
-            buttonDigitFive.Size = new Size(51, 56);
-            buttonDigitFive.TabIndex = 7;
-            buttonDigitFive.Text = "5";
-            buttonDigitFive.UseVisualStyleBackColor = false;
-            buttonDigitFive.Click += ButtonDigitFive_Click;
+            digitFiveButton.BackColor = SystemColors.Control;
+            digitFiveButton.FlatStyle = FlatStyle.System;
+            digitFiveButton.Font = new Font("Mongolian Baiti", 25F);
+            digitFiveButton.Location = new Point(68, 171);
+            digitFiveButton.Margin = new Padding(4, 3, 4, 3);
+            digitFiveButton.Name = "buttonDigitFive";
+            digitFiveButton.Size = new Size(51, 56);
+            digitFiveButton.TabIndex = 7;
+            digitFiveButton.Text = "5";
+            digitFiveButton.UseVisualStyleBackColor = false;
+            digitFiveButton.Click += ButtonDigitFive_Click;
             // 
-            // buttonDigitSix
+            // digitSixButton
             // 
-            buttonDigitSix.BackColor = SystemColors.Control;
-            buttonDigitSix.FlatStyle = FlatStyle.System;
-            buttonDigitSix.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitSix.Location = new Point(124, 171);
-            buttonDigitSix.Margin = new Padding(4, 3, 4, 3);
-            buttonDigitSix.Name = "buttonDigitSix";
-            buttonDigitSix.Size = new Size(51, 56);
-            buttonDigitSix.TabIndex = 8;
-            buttonDigitSix.Text = "6";
-            buttonDigitSix.UseVisualStyleBackColor = false;
-            buttonDigitSix.Click += ButtonDigitSix_Click;
+            digitSixButton.BackColor = SystemColors.Control;
+            digitSixButton.FlatStyle = FlatStyle.System;
+            digitSixButton.Font = new Font("Mongolian Baiti", 25F);
+            digitSixButton.Location = new Point(124, 171);
+            digitSixButton.Margin = new Padding(4, 3, 4, 3);
+            digitSixButton.Name = "buttonDigitSix";
+            digitSixButton.Size = new Size(51, 56);
+            digitSixButton.TabIndex = 8;
+            digitSixButton.Text = "6";
+            digitSixButton.UseVisualStyleBackColor = false;
+            digitSixButton.Click += ButtonDigitSix_Click;
             // 
-            // buttonCharDivide
+            // charDivideButton
             // 
-            buttonCharDivide.BackColor = SystemColors.Control;
-            buttonCharDivide.FlatStyle = FlatStyle.System;
-            buttonCharDivide.Font = new Font("Mongolian Baiti", 25F);
-            buttonCharDivide.Location = new Point(180, 46);
-            buttonCharDivide.Margin = new Padding(4, 3, 4, 3);
-            buttonCharDivide.Name = "buttonCharDivide";
-            buttonCharDivide.Size = new Size(51, 56);
-            buttonCharDivide.TabIndex = 9;
-            buttonCharDivide.Text = "÷";
-            buttonCharDivide.UseVisualStyleBackColor = false;
-            buttonCharDivide.Click += ButtonCharDivide_Click;
+            charDivideButton.BackColor = SystemColors.Control;
+            charDivideButton.FlatStyle = FlatStyle.System;
+            charDivideButton.Font = new Font("Mongolian Baiti", 25F);
+            charDivideButton.Location = new Point(180, 46);
+            charDivideButton.Margin = new Padding(4, 3, 4, 3);
+            charDivideButton.Name = "buttonCharDivide";
+            charDivideButton.Size = new Size(51, 56);
+            charDivideButton.TabIndex = 9;
+            charDivideButton.Text = "÷";
+            charDivideButton.UseVisualStyleBackColor = false;
+            charDivideButton.Click += ButtonCharDivide_Click;
             // 
-            // buttonCharMultiply
+            // charMultiplyButton
             // 
-            buttonCharMultiply.BackColor = SystemColors.Control;
-            buttonCharMultiply.FlatStyle = FlatStyle.System;
-            buttonCharMultiply.Font = new Font("Mongolian Baiti", 25F);
-            buttonCharMultiply.Location = new Point(180, 108);
-            buttonCharMultiply.Margin = new Padding(4, 3, 4, 3);
-            buttonCharMultiply.Name = "buttonCharMultiply";
-            buttonCharMultiply.Size = new Size(51, 56);
-            buttonCharMultiply.TabIndex = 10;
-            buttonCharMultiply.Text = "×";
-            buttonCharMultiply.UseVisualStyleBackColor = false;
-            buttonCharMultiply.Click += ButtonCharMultiply_Click;
+            charMultiplyButton.BackColor = SystemColors.Control;
+            charMultiplyButton.FlatStyle = FlatStyle.System;
+            charMultiplyButton.Font = new Font("Mongolian Baiti", 25F);
+            charMultiplyButton.Location = new Point(180, 108);
+            charMultiplyButton.Margin = new Padding(4, 3, 4, 3);
+            charMultiplyButton.Name = "buttonCharMultiply";
+            charMultiplyButton.Size = new Size(51, 56);
+            charMultiplyButton.TabIndex = 10;
+            charMultiplyButton.Text = "×";
+            charMultiplyButton.UseVisualStyleBackColor = false;
+            charMultiplyButton.Click += ButtonCharMultiply_Click;
             // 
-            // buttonCharSubtract
+            // charSubtractButton
             // 
-            buttonCharSubtract.BackColor = SystemColors.Control;
-            buttonCharSubtract.FlatStyle = FlatStyle.System;
-            buttonCharSubtract.Font = new Font("Mongolian Baiti", 25F);
-            buttonCharSubtract.Location = new Point(180, 171);
-            buttonCharSubtract.Margin = new Padding(4, 3, 4, 3);
-            buttonCharSubtract.Name = "buttonCharSubtract";
-            buttonCharSubtract.Size = new Size(51, 56);
-            buttonCharSubtract.TabIndex = 11;
-            buttonCharSubtract.Text = "-";
-            buttonCharSubtract.UseVisualStyleBackColor = false;
-            buttonCharSubtract.Click += ButtonCharSubtract_Click;
+            charSubtractButton.BackColor = SystemColors.Control;
+            charSubtractButton.FlatStyle = FlatStyle.System;
+            charSubtractButton.Font = new Font("Mongolian Baiti", 25F);
+            charSubtractButton.Location = new Point(180, 171);
+            charSubtractButton.Margin = new Padding(4, 3, 4, 3);
+            charSubtractButton.Name = "buttonCharSubtract";
+            charSubtractButton.Size = new Size(51, 56);
+            charSubtractButton.TabIndex = 11;
+            charSubtractButton.Text = "-";
+            charSubtractButton.UseVisualStyleBackColor = false;
+            charSubtractButton.Click += ButtonCharSubtract_Click;
             // 
-            // buttonDigitZero
+            // digitZeroButton
             // 
-            buttonDigitZero.BackColor = SystemColors.Control;
-            buttonDigitZero.FlatStyle = FlatStyle.System;
-            buttonDigitZero.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitZero.Location = new Point(68, 298);
-            buttonDigitZero.Margin = new Padding(4, 3, 4, 3);
-            buttonDigitZero.Name = "buttonDigitZero";
-            buttonDigitZero.Size = new Size(51, 56);
-            buttonDigitZero.TabIndex = 12;
-            buttonDigitZero.Text = "0";
-            buttonDigitZero.UseVisualStyleBackColor = false;
-            buttonDigitZero.Click += ButtonDigitZero_Click;
+            digitZeroButton.BackColor = SystemColors.Control;
+            digitZeroButton.FlatStyle = FlatStyle.System;
+            digitZeroButton.Font = new Font("Mongolian Baiti", 25F);
+            digitZeroButton.Location = new Point(68, 298);
+            digitZeroButton.Margin = new Padding(4, 3, 4, 3);
+            digitZeroButton.Name = "buttonDigitZero";
+            digitZeroButton.Size = new Size(51, 56);
+            digitZeroButton.TabIndex = 12;
+            digitZeroButton.Text = "0";
+            digitZeroButton.UseVisualStyleBackColor = false;
+            digitZeroButton.Click += ButtonDigitZero_Click;
             // 
-            // buttonDigitOne
+            // digitOneButton
             // 
-            buttonDigitOne.BackColor = SystemColors.Control;
-            buttonDigitOne.FlatStyle = FlatStyle.System;
-            buttonDigitOne.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitOne.Location = new Point(12, 234);
-            buttonDigitOne.Margin = new Padding(4, 3, 4, 3);
-            buttonDigitOne.Name = "buttonDigitOne";
-            buttonDigitOne.Size = new Size(51, 56);
-            buttonDigitOne.TabIndex = 13;
-            buttonDigitOne.Text = "1";
-            buttonDigitOne.UseVisualStyleBackColor = false;
-            buttonDigitOne.Click += ButtonDigitOne_Click;
+            digitOneButton.BackColor = SystemColors.Control;
+            digitOneButton.FlatStyle = FlatStyle.System;
+            digitOneButton.Font = new Font("Mongolian Baiti", 25F);
+            digitOneButton.Location = new Point(12, 234);
+            digitOneButton.Margin = new Padding(4, 3, 4, 3);
+            digitOneButton.Name = "buttonDigitOne";
+            digitOneButton.Size = new Size(51, 56);
+            digitOneButton.TabIndex = 13;
+            digitOneButton.Text = "1";
+            digitOneButton.UseVisualStyleBackColor = false;
+            digitOneButton.Click += ButtonDigitOne_Click;
             // 
-            // buttonDigitTwo
+            // digitTwoButton
             // 
-            buttonDigitTwo.BackColor = SystemColors.Control;
-            buttonDigitTwo.FlatStyle = FlatStyle.System;
-            buttonDigitTwo.Font = new Font("Mongolian Baiti", 25F);
-            buttonDigitTwo.Location = new Point(68, 234);
-            buttonDigitTwo.Margin = new Padding(4, 3, 4, 3);
-            buttonDigitTwo.Name = "buttonDigitTwo";
-            buttonDigitTwo.Size = new Size(51, 56);
-            buttonDigitTwo.TabIndex = 14;
-            buttonDigitTwo.Text = "2";
-            buttonDigitTwo.UseVisualStyleBackColor = false;
-            buttonDigitTwo.Click += ButtonDigitTwo_Click;
+            digitTwoButton.BackColor = SystemColors.Control;
+            digitTwoButton.FlatStyle = FlatStyle.System;
+            digitTwoButton.Font = new Font("Mongolian Baiti", 25F);
+            digitTwoButton.Location = new Point(68, 234);
+            digitTwoButton.Margin = new Padding(4, 3, 4, 3);
+            digitTwoButton.Name = "buttonDigitTwo";
+            digitTwoButton.Size = new Size(51, 56);
+            digitTwoButton.TabIndex = 14;
+            digitTwoButton.Text = "2";
+            digitTwoButton.UseVisualStyleBackColor = false;
+            digitTwoButton.Click += ButtonDigitTwo_Click;
             // 
-            // buttonTransparency
+            // transparencyButton
             // 
-            buttonTransparency.AccessibleName = "Mudar transparência";
-            buttonTransparency.BackColor = SystemColors.Control;
-            buttonTransparency.FlatStyle = FlatStyle.System;
-            buttonTransparency.Font = new Font("Mongolian Baiti", 25F);
-            buttonTransparency.Location = new Point(124, 46);
-            buttonTransparency.Margin = new Padding(4, 3, 4, 3);
-            buttonTransparency.Name = "buttonTransparency";
-            buttonTransparency.Size = new Size(51, 56);
-            buttonTransparency.TabIndex = 15;
-            buttonTransparency.Text = "⌘";
-            buttonTransparency.UseVisualStyleBackColor = false;
-            buttonTransparency.Click += ButtonTransparency_Click;
+            transparencyButton.AccessibleName = "Mudar transparência";
+            transparencyButton.BackColor = SystemColors.Control;
+            transparencyButton.FlatStyle = FlatStyle.System;
+            transparencyButton.Font = new Font("Mongolian Baiti", 25F);
+            transparencyButton.Location = new Point(124, 46);
+            transparencyButton.Margin = new Padding(4, 3, 4, 3);
+            transparencyButton.Name = "buttonTransparency";
+            transparencyButton.Size = new Size(51, 56);
+            transparencyButton.TabIndex = 15;
+            transparencyButton.Text = "⌘";
+            transparencyButton.UseVisualStyleBackColor = false;
+            transparencyButton.Click += ButtonTransparency_Click;
             // 
-            // buttonDelete
+            // deleteButton
             // 
-            buttonDelete.BackColor = SystemColors.Control;
-            buttonDelete.FlatStyle = FlatStyle.System;
-            buttonDelete.Font = new Font("Mongolian Baiti", 25F);
-            buttonDelete.Location = new Point(68, 46);
-            buttonDelete.Margin = new Padding(4, 3, 4, 3);
-            buttonDelete.Name = "buttonDelete";
-            buttonDelete.Size = new Size(51, 56);
-            buttonDelete.TabIndex = 16;
-            buttonDelete.Text = "⌫";
-            buttonDelete.UseVisualStyleBackColor = false;
-            buttonDelete.Click += ButtonDelete_Click;
+            deleteButton.BackColor = SystemColors.Control;
+            deleteButton.FlatStyle = FlatStyle.System;
+            deleteButton.Font = new Font("Mongolian Baiti", 25F);
+            deleteButton.Location = new Point(68, 46);
+            deleteButton.Margin = new Padding(4, 3, 4, 3);
+            deleteButton.Name = "buttonDelete";
+            deleteButton.Size = new Size(51, 56);
+            deleteButton.TabIndex = 16;
+            deleteButton.Text = "⌫";
+            deleteButton.UseVisualStyleBackColor = false;
+            deleteButton.Click += ButtonDelete_Click;
             // 
-            // buttonReset
+            // resetButton
             // 
-            buttonReset.BackColor = SystemColors.Control;
-            buttonReset.FlatStyle = FlatStyle.System;
-            buttonReset.Font = new Font("Mongolian Baiti", 20F);
-            buttonReset.Location = new Point(12, 48);
-            buttonReset.Margin = new Padding(4, 3, 4, 3);
-            buttonReset.Name = "buttonReset";
-            buttonReset.Size = new Size(51, 56);
-            buttonReset.TabIndex = 17;
-            buttonReset.Text = "AC";
-            buttonReset.UseVisualStyleBackColor = false;
-            buttonReset.Click += ButtonReset_Click;
+            resetButton.BackColor = SystemColors.Control;
+            resetButton.FlatStyle = FlatStyle.System;
+            resetButton.Font = new Font("Mongolian Baiti", 20F);
+            resetButton.Location = new Point(12, 48);
+            resetButton.Margin = new Padding(4, 3, 4, 3);
+            resetButton.Name = "buttonReset";
+            resetButton.Size = new Size(51, 56);
+            resetButton.TabIndex = 17;
+            resetButton.Text = "AC";
+            resetButton.UseVisualStyleBackColor = false;
+            resetButton.Click += ButtonReset_Click;
             // 
             // screenTextBox
             // 
@@ -329,7 +329,7 @@
             secondBracketButton.TabIndex = 19;
             secondBracketButton.Text = ")";
             secondBracketButton.UseVisualStyleBackColor = false;
-            secondBracketButton.Click += secondBracketButton_Click;
+            secondBracketButton.Click += SecondBracketButton_Click;
             // 
             // firstBracketButton
             // 
@@ -343,7 +343,7 @@
             firstBracketButton.TabIndex = 20;
             firstBracketButton.Text = "(";
             firstBracketButton.UseVisualStyleBackColor = false;
-            firstBracketButton.Click += firstBracketButton_Click;
+            firstBracketButton.Click += FirstBracketButton_Click;
             // 
             // CalculatorForm
             // 
@@ -354,25 +354,25 @@
             ClientSize = new Size(244, 361);
             Controls.Add(firstBracketButton);
             Controls.Add(secondBracketButton);
-            Controls.Add(buttonDigitSeven);
+            Controls.Add(digitSevenButton);
             Controls.Add(screenTextBox);
-            Controls.Add(buttonReset);
-            Controls.Add(buttonDelete);
-            Controls.Add(buttonTransparency);
-            Controls.Add(buttonDigitTwo);
-            Controls.Add(buttonDigitOne);
-            Controls.Add(buttonDigitZero);
-            Controls.Add(buttonCharSubtract);
-            Controls.Add(buttonCharMultiply);
-            Controls.Add(buttonCharDivide);
-            Controls.Add(buttonDigitSix);
-            Controls.Add(buttonDigitFive);
-            Controls.Add(buttonDigitFour);
-            Controls.Add(buttonDigitNine);
-            Controls.Add(buttonDigitEight);
-            Controls.Add(buttonDigitThree);
-            Controls.Add(buttonCharResult);
-            Controls.Add(buttonCharAdd);
+            Controls.Add(resetButton);
+            Controls.Add(deleteButton);
+            Controls.Add(transparencyButton);
+            Controls.Add(digitTwoButton);
+            Controls.Add(digitOneButton);
+            Controls.Add(digitZeroButton);
+            Controls.Add(charSubtractButton);
+            Controls.Add(charMultiplyButton);
+            Controls.Add(charDivideButton);
+            Controls.Add(digitSixButton);
+            Controls.Add(digitFiveButton);
+            Controls.Add(digitFourButton);
+            Controls.Add(digitNineButton);
+            Controls.Add(digitEightButton);
+            Controls.Add(digitThreeButton);
+            Controls.Add(charResultButton);
+            Controls.Add(charAddButton);
             Font = new Font("Segoe UI", 10F);
             ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -382,30 +382,31 @@
             Name = "CalculatorForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Calculadora Básica";
+            KeyPress += CalculatorForm_KeyPress;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button buttonCharAdd;
-        private Button buttonCharResult;
-        private Button buttonDigitThree;
-        private Button buttonDigitSeven;
-        private Button buttonDigitEight;
-        private Button buttonDigitNine;
-        private Button buttonDigitFour;
-        private Button buttonDigitFive;
-        private Button buttonDigitSix;
-        private Button buttonCharDivide;
-        private Button buttonCharMultiply;
-        private Button buttonCharSubtract;
-        private Button buttonDigitZero;
-        private Button buttonDigitOne;
-        private Button buttonDigitTwo;
-        private Button buttonTransparency;
-        private Button buttonDelete;
-        private Button buttonReset;
+        private Button charAddButton;
+        private Button charResultButton;
+        private Button digitThreeButton;
+        private Button digitSevenButton;
+        private Button digitEightButton;
+        private Button digitNineButton;
+        private Button digitFourButton;
+        private Button digitFiveButton;
+        private Button digitSixButton;
+        private Button charDivideButton;
+        private Button charMultiplyButton;
+        private Button charSubtractButton;
+        private Button digitZeroButton;
+        private Button digitOneButton;
+        private Button digitTwoButton;
+        private Button transparencyButton;
+        private Button deleteButton;
+        private Button resetButton;
         private TextBox screenTextBox;
         private Button secondBracketButton;
         private Button firstBracketButton;
