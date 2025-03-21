@@ -1,10 +1,10 @@
-# Calculadora Básica em Windows Forms C#
+# Calculadora
 
-Esta é uma calculadora de cálculo básica implementada em C# usando Windows Forms. A calculadora suporta operações básicas como adição, subtração, multiplicação e divisão.
+Uma calculadora de cÃ¡lculo bÃ¡sica implementada em C# usando Windows Forms. A calculadora suporta operaÃ§Ãµes bÃ¡sicas como adiÃ§Ã£o, subtraÃ§Ã£o, multiplicaÃ§Ã£o e divisÃ£o.
 
 ## Funcionalidades
 
-- Adição, subtração, multiplicação e divisão de números com a possibilidade de separar com "(" e ")".
+- AdiÃ§Ã£o, subtraÃ§Ã£o, multiplicaÃ§Ã£o e divisÃ£o de nÃºmeros com a possibilidade de separar com "(" e ")".
 
 ## Requisitos
 
@@ -12,28 +12,21 @@ Esta é uma calculadora de cálculo básica implementada em C# usando Windows Forms
 
 ## Como usar
 
-1. Clone ou faça o download deste repositório para o seu computador.
+1. Clone ou faÃ§a o download deste repositÃ³rio para o seu computador.
 2. Abra o projeto no Visual Studio.
 3. Execute o projeto.
-4. A calculadora será exibida.
-5. Insira os números nos campos apropriados.
-6. Selecione a operação desejada.
-7. Clique no botão "=".
-8. O resultado será exibido na tela.
-
-## Estrutura do Projeto
-
-- `CalculatorForm.cs`: Contém a lógica principal da aplicação.
-- `CalculatorForm.Designer.cs`: Contém o código gerado automaticamente pelo Visual Studio para definir a interface do usuário.
-- `Program.cs`: Arquivo de inicialização do aplicativo.
-- `Utils.cs`: Métodos utilitários.
+4. A calculadora serÃ¡ exibida.
+5. Insira os nÃºmeros nos campos apropriados.
+6. Selecione a operaÃ§Ã£o desejada.
+7. Clique no botÃ£o "=".
+8. O resultado serÃ¡ exibido na tela.
 
 ## Imagens
 
-<p float="left">
-  <img src="https://imgur.com/qR04faF.png" width="250" />
-</p>
+| Com Fundo | Sem Fundo |
+|:-----------------------------------:|:--------------------------------------:|
+| ![WithBackground](https://i.imgur.com/34p51Q5.png) | ![WithoutBackground](https://i.imgur.com/E0Ekiz9.png) |
 
-## Licença
+## LicenÃ§a
 
-Este projeto está licenciado sob a Licença MIT - consulte o arquivo [LICENSE](https://github.com/rodriaum/BasicCalculator?tab=MIT-1-ov-file#MIT-1-ov-file) para obter detalhes.
+Este projeto estÃ¡ licenciado sob a LicenÃ§a MIT - consulte o arquivo [LICENSE](https://github.com/rodriaum/BasicCalculator?tab=MIT-1-ov-file#MIT-1-ov-file) para obter detalhes.
