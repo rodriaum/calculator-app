@@ -32,7 +32,7 @@ public partial class CalculatorForm : Form
         AppBackgroundImage = this.BackgroundImage;
     }
 
-    /** Button Click Number */
+    /** Number Button */
 
     private void ButtonDigitNine_Click(object? sender, EventArgs e) => HandleCharacterButton(sender);
     private void ButtonDigitEight_Click(object? sender, EventArgs e) => HandleCharacterButton(sender);
@@ -45,177 +45,171 @@ public partial class CalculatorForm : Form
     private void ButtonDigitOne_Click(object? sender, EventArgs e) => HandleCharacterButton(sender);
     private void ButtonDigitZero_Click(object? sender, EventArgs e) => HandleCharacterButton(sender);
 
-    /** Button Click Bracket */
+    /** Bracket Buttons */
 
 
     private void FirstBracketButton_Click(object sender, EventArgs e) => HandleCharacterButton(sender); // Represents "("
     private void SecondBracketButton_Click(object sender, EventArgs e) => HandleCharacterButton(sender); // Represents ")"
 
-    /** Button Click Operator */
+    /** Click Buttons */
 
     private void ButtonCharAdd_Click(object? sender, EventArgs e) => HandleOperatorButton(sender);
     private void ButtonCharSubtract_Click(object? sender, EventArgs e) => HandleOperatorButton(sender);
     private void ButtonCharMultiply_Click(object? sender, EventArgs e) => HandleOperatorButton(sender);
     private void ButtonCharDivide_Click(object? sender, EventArgs e) => HandleOperatorButton(sender);
 
-    /** Button Click Operator */
+    /** General Buttons */
 
     private void ButtonDelete_Click(object? sender, EventArgs e)
     {
         Button button = deleteButton;
 
-        if (button != null)
-        {
-            string text = screenTextBox.Text;
-
-            if (!string.IsNullOrEmpty(text))
-            {
-                screenTextBox.Text = text.Substring(0, text.Length - 1);
-            }
-
-        }
-        else
+        if (button == null)
         {
             FinishAndRefresh(true, null);
+            return;
         }
 
+        string text = screenTextBox.Text;
+
+        if (!string.IsNullOrEmpty(text))
+        {
+            screenTextBox.Text = text.Substring(0, text.Length - 1);
+        }
     }
 
     private void ButtonReset_Click(object? sender, EventArgs e)
     {
         Button button = resetButton;
 
-        if (button != null)
-        {
-            if (!string.IsNullOrEmpty(screenTextBox.Text))
-                FinishAndRefresh(false, null);
-        }
-        else
+        if (button == null)
         {
             FinishAndRefresh(true, null);
+            return;
         }
 
+        if (!string.IsNullOrEmpty(screenTextBox.Text))
+            FinishAndRefresh(false, null);
     }
 
     private void ButtonTransparency_Click(object? sender, EventArgs e)
     {
         Button button = transparencyButton;
+        if (button == null) return;
 
-        if (button != null)
+        if (!AppTransparencyActive)
         {
-            if (!AppTransparencyActive)
-            {
-                BackColor = Color.DarkGray;
-                TransparencyKey = Color.DarkGray;
-                BackgroundImage = AppBackgroundImage;
-            }
-            else
-            {
-                BackgroundImage = null;
-                BackColor = Color.Empty;
-                TransparencyKey = Color.Empty;
-            }
-
-            AppTransparencyActive = !AppTransparencyActive;
+            BackColor = Color.DarkGray;
+            TransparencyKey = Color.DarkGray;
+            BackgroundImage = AppBackgroundImage;
+        }
+        else
+        {
+            BackgroundImage = null;
+            BackColor = Color.Empty;
+            TransparencyKey = Color.Empty;
         }
 
+        AppTransparencyActive = !AppTransparencyActive;
     }
 
-    /** Button Click Result */
+    private void CalculatorForm_KeyPress(object sender, KeyPressEventArgs e)
+    {
+        if (e.KeyChar.ToString() == Keys.Enter.ToString())
+        {
+            ButtonDigitNine_Click(sender, e);
+        }
+    }
+
+    /** Result Buttons */
 
     private void ButtonCharResult_Click(object? sender, EventArgs e)
     {
         Button button = charResultButton;
 
-        if (button != null)
-        {
-            // Before performing the calculation, we must replace mathematical operators with arithmetic operators.
-            screenTextBox.Text = screenTextBox.Text
-                .Replace("×", "*")
-                .Replace("÷", "/");
-
-            if (!string.IsNullOrEmpty(screenTextBox.Text))
-            {
-                try
-                {
-                    
-                    screenTextBox.Text = AppHelper.DoubleToString(AppMath.EvaluateExpression(screenTextBox.Text));
-                }
-                catch (Exception ex)
-                {
-                    FinishAndRefresh(true, ex.Message);
-                }
-            }
-
-        }
-        else
+        if (button == null)
         {
             FinishAndRefresh(true, null);
+            return;
         }
 
+        // Before performing the calculation, we must replace mathematical operators with arithmetic operators.
+        screenTextBox.Text = screenTextBox.Text
+            .Replace("×", "*")
+            .Replace("÷", "/");
+
+        if (string.IsNullOrEmpty(screenTextBox.Text)) return;
+
+        try
+        {
+            (double result, bool success) = AppMath.EvaluateExpression(screenTextBox.Text);
+
+            if (!success)
+            {
+                FinishAndRefresh(true, "Expressão inválida!");
+            }
+
+            screenTextBox.Text = AppHelper.DoubleToString(result);
+        }
+        catch (Exception ex)
+        {
+            FinishAndRefresh(true, ex.Message);
+        }
     }
 
-    /** Code Helpers */
+    /** Handlers */
 
     private void HandleCharacterButton(object? sender)
     {
         Button? button = sender as Button;
 
-        if (button != null)
-        {
-            if (HasFinishedCalculation)
-            {
-                screenTextBox.Clear();
-                HasFinishedCalculation = false;
-            }
-
-            screenTextBox.AppendText(button.Text);
-        }
-        else
+        if (button == null)
         {
             FinishAndRefresh(true, "");
+            return;
         }
+
+        if (HasFinishedCalculation)
+        {
+            screenTextBox.Clear();
+            HasFinishedCalculation = false;
+        }
+
+        screenTextBox.AppendText(button.Text);
     }
 
     private void HandleOperatorButton(object? sender)
     {
         Button? button = sender as Button;
 
-        if (button != null)
-        {
-            if (HasFinishedCalculation)
-            {
-                screenTextBox.Clear();
-                HasFinishedCalculation = false;
-            }
-
-            if (!string.IsNullOrEmpty(screenTextBox.Text))
-                screenTextBox.AppendText(button.Text);
-
-        }
-        else
+        if (button == null)
         {
             FinishAndRefresh(true, null);
+            return;
         }
 
+        if (HasFinishedCalculation)
+        {
+            screenTextBox.Clear();
+            HasFinishedCalculation = false;
+        }
+
+        if (!string.IsNullOrEmpty(screenTextBox.Text))
+        {
+            screenTextBox.AppendText(button.Text);
+        }
     }
 
-    // The string "error" will only be used as a boolean parameter "isError" is true.
-    private async void FinishAndRefresh(bool isError, string? error)
+    /** Functions */
+
+    /// <summary>
+    ///  The string "error" will only be used as a boolean parameter "isError" is true.
+    /// </summary>
+    private async void FinishAndRefresh(bool isError, string? error = null)
     {
         if (isError)
         {
-
-            if (!string.IsNullOrEmpty(error))
-            {
-                screenTextBox.Text = error;
-            }
-            else
-            {
-                screenTextBox.Text = "Error";
-            }
-
-
+            screenTextBox.Text = (!string.IsNullOrWhiteSpace(error) ? error : "Erro");
         }
         else
         {
@@ -225,11 +219,5 @@ public partial class CalculatorForm : Form
         HasFinishedCalculation = true;
 
         await Task.Delay(500);
-    }
-
-    private void CalculatorForm_KeyPress(object sender, KeyPressEventArgs e)
-    {
-        if (e.KeyChar.ToString() == Keys.Enter.ToString())
-            ButtonDigitNine_Click(sender, e);
     }
 }
