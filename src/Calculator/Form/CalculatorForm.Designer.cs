@@ -5,6 +5,8 @@
  * https://github.com/rodriaum/Calculatorl?tab=MIT-1-ov-file#readme
  */
 
+using Calculator.Helper;
+
 namespace Calculator
 {
     partial class CalculatorForm
@@ -63,7 +65,7 @@ namespace Calculator
             // 
             charAddButton.BackColor = SystemColors.Control;
             charAddButton.FlatStyle = FlatStyle.System;
-            charAddButton.Font = new Font("Mongolian Baiti", 25F);
+            charAddButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             charAddButton.Location = new Point(180, 234);
             charAddButton.Margin = new Padding(4, 3, 4, 3);
             charAddButton.Name = "buttonCharAdd";
@@ -76,7 +78,7 @@ namespace Calculator
             // charResultButton
             // 
             charResultButton.BackColor = SystemColors.HotTrack;
-            charResultButton.Font = new Font("Mongolian Baiti", 25F);
+            charResultButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             charResultButton.ForeColor = Color.Transparent;
             charResultButton.Location = new Point(180, 298);
             charResultButton.Margin = new Padding(4, 3, 4, 3);
@@ -91,7 +93,7 @@ namespace Calculator
             // 
             digitThreeButton.BackColor = SystemColors.Control;
             digitThreeButton.FlatStyle = FlatStyle.System;
-            digitThreeButton.Font = new Font("Mongolian Baiti", 25F);
+            digitThreeButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             digitThreeButton.Location = new Point(124, 234);
             digitThreeButton.Margin = new Padding(4, 3, 4, 3);
             digitThreeButton.Name = "buttonDigitThree";
@@ -105,7 +107,7 @@ namespace Calculator
             // 
             digitSevenButton.BackColor = SystemColors.Control;
             digitSevenButton.FlatStyle = FlatStyle.System;
-            digitSevenButton.Font = new Font("Mongolian Baiti", 25F);
+            digitSevenButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             digitSevenButton.Location = new Point(12, 108);
             digitSevenButton.Margin = new Padding(4, 3, 4, 3);
             digitSevenButton.Name = "buttonDigitSeven";
@@ -119,7 +121,7 @@ namespace Calculator
             // 
             digitEightButton.BackColor = SystemColors.Control;
             digitEightButton.FlatStyle = FlatStyle.System;
-            digitEightButton.Font = new Font("Mongolian Baiti", 25F);
+            digitEightButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             digitEightButton.Location = new Point(68, 108);
             digitEightButton.Margin = new Padding(4, 3, 4, 3);
             digitEightButton.Name = "buttonDigitEight";
@@ -133,7 +135,7 @@ namespace Calculator
             // 
             digitNineButton.BackColor = SystemColors.Control;
             digitNineButton.FlatStyle = FlatStyle.System;
-            digitNineButton.Font = new Font("Mongolian Baiti", 25F);
+            digitNineButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             digitNineButton.Location = new Point(124, 108);
             digitNineButton.Margin = new Padding(4, 3, 4, 3);
             digitNineButton.Name = "buttonDigitNine";
@@ -147,7 +149,7 @@ namespace Calculator
             // 
             digitFourButton.BackColor = SystemColors.Control;
             digitFourButton.FlatStyle = FlatStyle.System;
-            digitFourButton.Font = new Font("Mongolian Baiti", 25F);
+            digitFourButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             digitFourButton.Location = new Point(12, 171);
             digitFourButton.Margin = new Padding(4, 3, 4, 3);
             digitFourButton.Name = "buttonDigitFour";
@@ -161,7 +163,7 @@ namespace Calculator
             // 
             digitFiveButton.BackColor = SystemColors.Control;
             digitFiveButton.FlatStyle = FlatStyle.System;
-            digitFiveButton.Font = new Font("Mongolian Baiti", 25F);
+            digitFiveButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             digitFiveButton.Location = new Point(68, 171);
             digitFiveButton.Margin = new Padding(4, 3, 4, 3);
             digitFiveButton.Name = "buttonDigitFive";
@@ -175,7 +177,7 @@ namespace Calculator
             // 
             digitSixButton.BackColor = SystemColors.Control;
             digitSixButton.FlatStyle = FlatStyle.System;
-            digitSixButton.Font = new Font("Mongolian Baiti", 25F);
+            digitSixButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             digitSixButton.Location = new Point(124, 171);
             digitSixButton.Margin = new Padding(4, 3, 4, 3);
             digitSixButton.Name = "buttonDigitSix";
@@ -189,7 +191,7 @@ namespace Calculator
             // 
             charDivideButton.BackColor = SystemColors.Control;
             charDivideButton.FlatStyle = FlatStyle.System;
-            charDivideButton.Font = new Font("Mongolian Baiti", 25F);
+            charDivideButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             charDivideButton.Location = new Point(180, 46);
             charDivideButton.Margin = new Padding(4, 3, 4, 3);
             charDivideButton.Name = "buttonCharDivide";
@@ -203,7 +205,7 @@ namespace Calculator
             // 
             charMultiplyButton.BackColor = SystemColors.Control;
             charMultiplyButton.FlatStyle = FlatStyle.System;
-            charMultiplyButton.Font = new Font("Mongolian Baiti", 25F);
+            charMultiplyButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             charMultiplyButton.Location = new Point(180, 108);
             charMultiplyButton.Margin = new Padding(4, 3, 4, 3);
             charMultiplyButton.Name = "buttonCharMultiply";
@@ -217,7 +219,7 @@ namespace Calculator
             // 
             charSubtractButton.BackColor = SystemColors.Control;
             charSubtractButton.FlatStyle = FlatStyle.System;
-            charSubtractButton.Font = new Font("Mongolian Baiti", 25F);
+            charSubtractButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             charSubtractButton.Location = new Point(180, 171);
             charSubtractButton.Margin = new Padding(4, 3, 4, 3);
             charSubtractButton.Name = "buttonCharSubtract";
@@ -231,7 +233,7 @@ namespace Calculator
             // 
             digitZeroButton.BackColor = SystemColors.Control;
             digitZeroButton.FlatStyle = FlatStyle.System;
-            digitZeroButton.Font = new Font("Mongolian Baiti", 25F);
+            digitZeroButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             digitZeroButton.Location = new Point(68, 298);
             digitZeroButton.Margin = new Padding(4, 3, 4, 3);
             digitZeroButton.Name = "buttonDigitZero";
@@ -245,7 +247,7 @@ namespace Calculator
             // 
             digitOneButton.BackColor = SystemColors.Control;
             digitOneButton.FlatStyle = FlatStyle.System;
-            digitOneButton.Font = new Font("Mongolian Baiti", 25F);
+            digitOneButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             digitOneButton.Location = new Point(12, 234);
             digitOneButton.Margin = new Padding(4, 3, 4, 3);
             digitOneButton.Name = "buttonDigitOne";
@@ -259,7 +261,7 @@ namespace Calculator
             // 
             digitTwoButton.BackColor = SystemColors.Control;
             digitTwoButton.FlatStyle = FlatStyle.System;
-            digitTwoButton.Font = new Font("Mongolian Baiti", 25F);
+            digitTwoButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             digitTwoButton.Location = new Point(68, 234);
             digitTwoButton.Margin = new Padding(4, 3, 4, 3);
             digitTwoButton.Name = "buttonDigitTwo";
@@ -274,7 +276,7 @@ namespace Calculator
             transparencyButton.AccessibleName = "Mudar transparência";
             transparencyButton.BackColor = SystemColors.Control;
             transparencyButton.FlatStyle = FlatStyle.System;
-            transparencyButton.Font = new Font("Mongolian Baiti", 25F);
+            transparencyButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             transparencyButton.Location = new Point(124, 46);
             transparencyButton.Margin = new Padding(4, 3, 4, 3);
             transparencyButton.Name = "buttonTransparency";
@@ -288,7 +290,7 @@ namespace Calculator
             // 
             deleteButton.BackColor = SystemColors.Control;
             deleteButton.FlatStyle = FlatStyle.System;
-            deleteButton.Font = new Font("Mongolian Baiti", 25F);
+            deleteButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             deleteButton.Location = new Point(68, 46);
             deleteButton.Margin = new Padding(4, 3, 4, 3);
             deleteButton.Name = "buttonDelete";
@@ -302,7 +304,7 @@ namespace Calculator
             // 
             resetButton.BackColor = SystemColors.Control;
             resetButton.FlatStyle = FlatStyle.System;
-            resetButton.Font = new Font("Mongolian Baiti", 20F);
+            resetButton.Font = new Font(AppHelper.GetAppFontfamily(), 20F);
             resetButton.Location = new Point(12, 48);
             resetButton.Margin = new Padding(4, 3, 4, 3);
             resetButton.Name = "buttonReset";
@@ -328,7 +330,7 @@ namespace Calculator
             // 
             secondBracketButton.BackColor = SystemColors.Control;
             secondBracketButton.FlatStyle = FlatStyle.System;
-            secondBracketButton.Font = new Font("Mongolian Baiti", 25F);
+            secondBracketButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             secondBracketButton.Location = new Point(124, 298);
             secondBracketButton.Margin = new Padding(4, 3, 4, 3);
             secondBracketButton.Name = "secondBracketButton";
@@ -342,7 +344,7 @@ namespace Calculator
             // 
             firstBracketButton.BackColor = SystemColors.Control;
             firstBracketButton.FlatStyle = FlatStyle.System;
-            firstBracketButton.Font = new Font("Mongolian Baiti", 25F);
+            firstBracketButton.Font = new Font(AppHelper.GetAppFontfamily(), 25F);
             firstBracketButton.Location = new Point(13, 298);
             firstBracketButton.Margin = new Padding(4, 3, 4, 3);
             firstBracketButton.Name = "firstBracketButton";

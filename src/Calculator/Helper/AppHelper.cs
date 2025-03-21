@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Drawing.Text;
+using System.Text.RegularExpressions;
 
 /*
  * Copyright (c) 2024 Rodrigo Ferreira
@@ -27,6 +28,19 @@ public partial class AppHelper
     public static char EmptyChar()
     {
         return '\0';
+    }
+
+    public static bool HasDeviceFont(string name)
+    {
+        using (var fonts = new InstalledFontCollection())
+        {
+            return fonts.Families.Any(fontFamily => fontFamily.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+        }
+    }
+
+    public static FontFamily GetAppFontfamily()
+    {
+        return HasDeviceFont("Barlow") ? new FontFamily("Barlow") : new FontFamily("Mongolian Baiti");
     }
 
     /** Regex */
