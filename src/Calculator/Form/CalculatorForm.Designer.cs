@@ -318,7 +318,7 @@ namespace Calculator
             // 
             screenTextBox.BorderStyle = BorderStyle.FixedSingle;
             screenTextBox.Cursor = Cursors.No;
-            screenTextBox.Font = new Font("Segoe UI", 15F);
+            screenTextBox.Font = new Font(AppHelper.GetAppFontfamily(), 15F);
             screenTextBox.Location = new Point(12, 8);
             screenTextBox.Name = "screenTextBox";
             screenTextBox.ReadOnly = true;
@@ -382,7 +382,7 @@ namespace Calculator
             Controls.Add(digitThreeButton);
             Controls.Add(charResultButton);
             Controls.Add(charAddButton);
-            Font = new Font("Segoe UI", 10F);
+            Font = new Font(AppHelper.GetAppFontfamily(), 10F);
             ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
